@@ -1,0 +1,1179 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}[hidden]{display:none!important}</style>
+<title>Unicorn Landscaping</title>
+<meta name="description" content="Unicorn Landscaping Inc. designs and builds interlocking, natural stone, decks, outdoor kitchens and pool surrounds in Vaughan and across the GTA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..600,50..100;1,9..144,300..500,50..100&family=Manrope:wght@400;500;600;700&display=swap">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LandscapingBusiness","name":"Unicorn Landscaping Inc.","url":"https://unicornlandscaping.ca/","telephone":"+1-647-904-0668","email":"info@unicornlandscaping.ca","address":{"@type":"PostalAddress","streetAddress":"81 Vedette Wy","addressLocality":"Vaughan","addressRegion":"ON","postalCode":"L4H 4K3","addressCountry":"CA"},"geo":{"@type":"GeoCoordinates","latitude":43.855496,"longitude":-79.561252},"sameAs":["https://www.instagram.com/unicorn_landscaping/"]}
+</script>
+<style>
+/* Layout concept: a sunlit garden walk. White paper pages, arched "garden window" photography,
+   thin botanical line work that draws itself as you scroll, and one sage ground for the selector and map. */
+:root{
+  --paper:#ffffff; --off:#f8faf6; --mist:#eff5ea; --sage:#dce9d8; --stone:#e9e1d2;
+  --forest:#0b4f2a; --leaf:#116a3c; --moss:#477d59; --ink:#1f2a23; --muted:#5b6b60; --line:#d3dfd0;
+  --display:"Fraunces", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --body:"Manrope", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --ease:cubic-bezier(.22,.7,.18,1);
+  --gut:max(16px, env(safe-area-inset-left, 0px));
+  --gutR:max(16px, env(safe-area-inset-right, 0px));
+  --max:1280px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.65 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--paper)}
+img{max-width:100%;display:block}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--leaf);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--max);margin:0 auto;padding-left:var(--gut);padding-right:var(--gutR)}
+@media (min-width:760px){.wrap{padding-left:max(40px,env(safe-area-inset-left,0px));padding-right:max(40px,env(safe-area-inset-right,0px))}}
+h1,h2,h3{font-family:var(--display);font-weight:400;color:var(--forest);text-wrap:balance;margin:0;font-variation-settings:"SOFT" 100,"opsz" 96;letter-spacing:-.01em}
+h1{font-size:clamp(2.6rem,6.2vw,5.4rem);line-height:1.02}
+h2{font-size:clamp(2rem,4.2vw,3.4rem);line-height:1.06}
+h3{font-size:clamp(1.3rem,2vw,1.6rem);line-height:1.2}
+h1 em,h2 em{font-style:italic;color:var(--moss);font-weight:300}
+p{margin:0}
+.lede{font-size:clamp(1.05rem,1.4vw,1.2rem);color:var(--muted);max-width:56ch}
+.eyebrow{font:600 .74rem/1 var(--body);letter-spacing:.18em;text-transform:uppercase;color:var(--leaf);display:inline-flex;align-items:center;gap:.7em}
+.eyebrow::before{content:"";width:28px;height:1px;background:currentColor}
+.btn{display:inline-flex;align-items:center;gap:.6em;padding:.95em 1.5em;border-radius:999px;font:600 .95rem/1 var(--body);text-decoration:none;border:1.5px solid var(--forest);cursor:pointer;transition:background .35s var(--ease),color .35s var(--ease),transform .35s var(--ease)}
+.btn svg{width:16px;height:16px;transition:transform .35s var(--ease)}
+.btn:hover svg{transform:translateX(4px)}
+.btn-p{background:var(--forest);color:#fff}
+.btn-p:hover{background:var(--leaf);border-color:var(--leaf)}
+.btn-s{background:var(--paper);color:var(--forest)}
+.btn-s:hover{background:var(--mist)}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.dn{display:inline-flex;align-items:center;gap:.45em;font:600 .68rem/1.3 var(--body);letter-spacing:.04em;color:#7a5a12;background:#fbf3df;border:1px dashed #d8b866;border-radius:6px;padding:.35em .6em;max-width:100%}
+.dn::before{content:"Demo";font-weight:700;text-transform:uppercase;letter-spacing:.1em}
+body.hide-notes .dn{display:none!important}
+
+/* header */
+.hdr{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .3s}
+.hdr.scrolled{border-color:var(--line)}
+.hdr .wrap{display:flex;align-items:center;gap:24px;height:76px}
+.brand{display:block;width:150px;flex:none}
+.brand svg{width:100%;height:auto;display:block}
+.nav{display:flex;gap:4px;margin-left:auto;align-items:center}
+.nav a{font:600 .86rem/1 var(--body);text-decoration:none;padding:.7em .8em;border-radius:999px;color:var(--ink);position:relative}
+.nav a::after{content:"";position:absolute;left:.8em;right:.8em;bottom:.35em;height:1px;background:var(--leaf);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
+.nav a:hover::after,.nav a[aria-current="page"]::after{transform:scaleX(1)}
+.nav a[aria-current="page"]{color:var(--forest)}
+.nav .btn{margin-left:10px;padding:.85em 1.25em}
+.nav .btn-p,.nav .btn-p[aria-current]{color:#fff}
+.nav .btn::after{display:none}
+.menu-btn{display:none;margin-left:auto;background:none;border:1.5px solid var(--line);border-radius:999px;padding:.6em 1em;font-weight:600;font-size:.85rem;cursor:pointer;align-items:center;gap:.6em}
+.menu-btn i{display:block;width:16px;height:1.5px;background:var(--forest);box-shadow:0 5px 0 var(--forest)}
+@media (max-width:1100px){.nav{display:none}.menu-btn{display:inline-flex}}
+.mnav{position:fixed;inset:0;z-index:70;background:var(--mist);display:flex;flex-direction:column;padding:calc(env(safe-area-inset-top,0px) + 20px) var(--gutR) calc(env(safe-area-inset-bottom,0px) + 28px) var(--gut);clip-path:circle(0 at calc(100% - 50px) 40px);transition:clip-path .6s var(--ease);visibility:hidden}
+.mnav.open{clip-path:circle(150% at calc(100% - 50px) 40px);visibility:visible}
+.mnav-top{display:flex;justify-content:space-between;align-items:center}
+.mnav-top .brand{width:130px}
+.mnav nav{display:flex;flex-direction:column;margin-top:36px}
+.mnav nav a{font:400 clamp(1.8rem,7vw,2.6rem)/1.15 var(--display);color:var(--forest);text-decoration:none;padding:.22em 0;border-bottom:1px solid var(--line)}
+.mnav .meta{margin-top:auto;display:grid;gap:6px;color:var(--muted);font-size:.95rem}
+.close-btn{background:var(--paper);border:1.5px solid var(--line);border-radius:999px;padding:.6em 1.1em;font-weight:600;cursor:pointer}
+
+/* view + transitions */
+main{min-height:60vh;overflow-x:clip}
+.wipe{position:fixed;inset:0;z-index:80;pointer-events:none;background:var(--mist);transform:translateY(100%);border-radius:50% 50% 0 0/14vh 14vh 0 0}
+.wipe.in{transition:transform .38s var(--ease);transform:translateY(0);border-radius:0}
+.wipe.out{transition:transform .42s var(--ease),border-radius .42s;transform:translateY(-100%);border-radius:0 0 50% 50%/0 0 14vh 14vh}
+.view-enter .rise{animation:rise .8s var(--ease) both}
+.view-enter .rise:nth-child(2){animation-delay:.08s}.view-enter .rise:nth-child(3){animation-delay:.16s}.view-enter .rise:nth-child(4){animation-delay:.24s}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+
+/* scroll-driven reveals: content is fully visible without support */
+@supports (animation-timeline: view()){
+  .sr{animation:srIn linear both;animation-timeline:view();animation-range:entry 0% entry 55%}
+  .draw path,.draw line,.draw circle,.draw ellipse{stroke-dasharray:1;stroke-dashoffset:0;animation:drawIn linear both;animation-timeline:view();animation-range:entry 10% cover 45%}
+}
+@keyframes srIn{from{opacity:.001;transform:translateY(40px)}to{opacity:1;transform:none}}
+@keyframes drawIn{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+.bot{fill:none;stroke:var(--moss);stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.bot .leafy{fill:var(--sage);stroke:var(--moss)}
+
+section{padding-block:clamp(72px,10vw,140px)}
+.sec-head{display:grid;gap:18px;margin-bottom:clamp(36px,5vw,64px);max-width:760px}
+.sec-head.split{max-width:none;grid-template-columns:1.2fr 1fr;align-items:end;gap:32px}
+@media (max-width:860px){.sec-head.split{grid-template-columns:1fr}}
+
+/* hero */
+.hero{padding-block:clamp(28px,4vw,56px) clamp(56px,8vw,110px);position:relative}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(28px,5vw,80px);align-items:center}
+.hero-copy{display:grid;gap:26px;position:relative;z-index:2}
+.hero h1 .l1{display:block;font-style:italic;font-weight:300;color:var(--forest)}
+.hero h1 .l2{display:block;color:var(--leaf)}
+.hero h1 .w{display:inline-block}
+.hero-meta{display:flex;gap:28px;flex-wrap:wrap;padding-top:22px;border-top:1px solid var(--line);font-size:.88rem;color:var(--muted)}
+.hero-meta b{display:block;font:500 1.15rem/1.2 var(--display);color:var(--forest)}
+.arch{position:relative;border-radius:999px 999px 28px 28px;overflow:hidden;aspect-ratio:5/6;background:var(--sage);max-width:100%}
+.arch img{width:100%;height:115%;object-fit:cover;object-position:60% 50%;transform:translateY(var(--py,0px)) scale(1.04)}
+.hero-art{position:relative}
+.hero-art .branch{position:absolute;left:-14%;bottom:-6%;width:46%;z-index:3;pointer-events:none}
+.hero-art .chip{position:absolute;right:18px;bottom:18px;background:rgba(255,255,255,.92);border-radius:999px;padding:.6em 1em;font:600 .78rem/1 var(--body);color:var(--forest);display:flex;gap:.5em;align-items:center}
+.hero-art .chip i{width:8px;height:8px;border-radius:50%;background:var(--leaf)}
+.scroll-cue{display:flex;align-items:center;gap:12px;font:600 .72rem/1 var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);text-decoration:none}
+.scroll-cue span{width:1px;height:38px;background:var(--line);position:relative;overflow:hidden}
+.scroll-cue span::after{content:"";position:absolute;left:0;top:-40%;width:1px;height:40%;background:var(--leaf);animation:cue 2.4s var(--ease) infinite}
+@keyframes cue{to{top:100%}}
+.hero.ready .w{animation:rise 1s var(--ease) both}
+.hero.ready .l1 .w:nth-child(2){animation-delay:.08s}.hero.ready .l2 .w:nth-child(1){animation-delay:.18s}.hero.ready .l2 .w:nth-child(2){animation-delay:.26s}.hero.ready .l2 .w:nth-child(3){animation-delay:.32s}
+.hero.ready .arch{animation:archIn 1.4s var(--ease) both}
+@keyframes archIn{from{clip-path:inset(100% 0 0 0 round 999px 999px 28px 28px)}to{clip-path:inset(0 0 0 0 round 0)}}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr}.arch{aspect-ratio:4/4.3;max-height:70vh;width:100%}.hero-art .branch{left:auto;right:-6%;bottom:auto;top:-8%;width:34%}}
+
+/* indoor / outdoor selector */
+.worlds{background:var(--mist);position:relative;overflow:hidden}
+.worlds .sec-head{margin-inline:auto;text-align:center;justify-items:center}
+.worlds .sec-head .eyebrow::after{content:"";width:28px;height:1px;background:currentColor}
+.panels{display:flex;gap:16px;height:clamp(460px,62vw,640px)}
+.panel{position:relative;flex:1 1 0;min-width:0;border-radius:28px;overflow:hidden;text-decoration:none;color:#fff;transition:flex-grow .9s var(--ease);isolation:isolate;background:var(--forest)}
+.panel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.6s var(--ease);z-index:-2}
+.panel::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(11,40,24,0) 35%,rgba(11,40,24,.72));transition:background .7s var(--ease)}
+.panel:hover::before,.panel:focus-visible::before{background:linear-gradient(180deg,rgba(17,106,60,.28),rgba(11,40,24,.82))}
+.panel:hover img,.panel:focus-visible img{transform:scale(1.06)}
+@media (min-width:900px) and (hover:hover){.panels:hover .panel{flex-grow:.72}.panels .panel:hover,.panels .panel:focus-visible{flex-grow:1.28}}
+.panel-body{position:absolute;left:0;right:0;bottom:0;padding:clamp(22px,3vw,40px);display:grid;gap:12px;transition:transform .7s var(--ease)}
+.panel:hover .panel-body{transform:translateY(-6px)}
+.panel .tag{font:600 .72rem/1 var(--body);letter-spacing:.18em;text-transform:uppercase;opacity:.85}
+.panel h3{color:#fff;font-size:clamp(2rem,3.6vw,3.2rem);font-weight:300;font-style:italic;white-space:nowrap}
+.panel p{max-width:34ch;opacity:.92}
+.panel .go{display:inline-flex;align-items:center;gap:.7em;font-weight:600;font-size:.92rem;margin-top:6px}
+.panel .go b{width:42px;height:42px;border-radius:50%;border:1.5px solid rgba(255,255,255,.7);display:grid;place-items:center;transition:background .4s,transform .5s var(--ease)}
+.panel:hover .go b{background:#fff;color:var(--forest);transform:translateX(6px)}
+.panel .go svg{width:16px;height:16px}
+.panel .ov{position:absolute;top:28px;right:28px;width:min(40%,220px);pointer-events:none}
+.panel .ov path,.panel .ov rect,.panel .ov line{fill:none;stroke:rgba(255,255,255,.85);stroke-width:1.2;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.6s var(--ease)}
+.panel:hover .ov *,.panel:focus-visible .ov *{stroke-dashoffset:0}
+@media (max-width:760px){.panels{flex-direction:column;height:auto}.panel{min-height:420px}.panel h3{white-space:normal}}
+
+/* services mosaic */
+.mosaic{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:16px;grid-auto-rows:clamp(150px,15vw,210px)}
+.tile{position:relative;border-radius:22px;overflow:hidden;text-decoration:none;color:#fff;isolation:isolate;background:var(--forest)}
+.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 1.4s var(--ease)}
+.tile::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(10,35,20,0) 30%,rgba(10,35,20,.75))}
+.tile:hover img{transform:scale(1.07)}
+.tile .tb{position:absolute;left:0;right:0;bottom:0;padding:22px 24px;display:grid;gap:6px}
+.tile h3{color:#fff;font-size:clamp(1.3rem,1.9vw,1.75rem)}
+.tile p{font-size:.92rem;opacity:.9;max-width:44ch}
+.tile .arr{position:absolute;top:18px;right:18px;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.92);color:var(--forest);display:grid;place-items:center;transform:scale(.6) rotate(-45deg);opacity:0;transition:all .5s var(--ease)}
+.tile:hover .arr,.tile:focus-visible .arr{opacity:1;transform:none}
+.tile .arr svg{width:16px;height:16px}
+.t1{grid-column:span 7;grid-row:span 2}.t2{grid-column:span 5;grid-row:span 2}
+.t3,.t4,.t5{grid-column:span 4;grid-row:span 2}
+.t6{grid-column:span 5;grid-row:span 2}.t7{grid-column:span 7;grid-row:span 2}
+.t7{background:var(--stone)}
+@media (max-width:900px){.mosaic{grid-template-columns:repeat(2,minmax(0,1fr))}.t1,.t7{grid-column:span 2}.t2,.t3,.t4,.t5,.t6{grid-column:span 1}}
+@media (max-width:560px){.mosaic{grid-template-columns:1fr;grid-auto-rows:150px}.mosaic>*{grid-column:auto!important}}
+.paving{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:0;transition:opacity .4s}
+.paving line,.paving rect{stroke:rgba(255,255,255,.7);stroke-width:1;fill:none;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.4s var(--ease)}
+.tile:hover .paving,.cat-card:hover .paving{opacity:1}
+.tile:hover .paving *,.cat-card:hover .paving *{stroke-dashoffset:0}
+
+/* approach / tree */
+.approach .wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,6vw,96px);align-items:center}
+.tree{width:100%;max-width:420px;margin-inline:auto}
+.pillars{display:grid;gap:0;margin-top:34px;border-top:1px solid var(--line)}
+.pillar{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:22px 0;border-bottom:1px solid var(--line)}
+.pillar h3{font-size:1.25rem}
+.pillar p{color:var(--muted)}
+@media (max-width:860px){.approach .wrap{grid-template-columns:1fr}.tree{max-width:260px}.pillar{grid-template-columns:1fr;gap:6px}}
+
+/* reels */
+.reels{background:var(--off);position:relative;overflow:hidden}
+.reel-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2.4vw,32px)}
+.reel{position:relative;aspect-ratio:9/16;max-width:100%;border-radius:26px;overflow:hidden;text-decoration:none;color:#fff;isolation:isolate;background:var(--forest);transition:transform .7s var(--ease),box-shadow .7s var(--ease)}
+.reel:nth-child(2){transform:translateY(40px)}
+.reel:hover{transform:translateY(-8px);box-shadow:0 30px 60px -30px rgba(11,79,42,.55)}
+.reel:nth-child(2):hover{transform:translateY(32px)}
+.reel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 2s var(--ease)}
+.reel:hover img{transform:scale(1.08)}
+.reel::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,0) 30%,rgba(0,0,0,0) 55%,rgba(8,32,18,.85))}
+.reel .top{position:absolute;top:16px;left:16px;right:16px;display:flex;justify-content:space-between;align-items:center;font:600 .78rem/1 var(--body)}
+.reel .top span{display:flex;gap:8px;align-items:center}
+.reel .top svg{width:18px;height:18px}
+.reel .play{position:absolute;left:50%;top:46%;width:74px;height:74px;margin:-37px 0 0 -37px;border-radius:50%;background:rgba(255,255,255,.2);backdrop-filter:blur(6px);border:1.5px solid rgba(255,255,255,.75);display:grid;place-items:center;transition:transform .5s var(--ease),background .4s}
+.reel:hover .play{transform:scale(1.1);background:rgba(255,255,255,.95);color:var(--forest)}
+.reel .play svg{width:22px;height:22px;margin-left:4px}
+.reel .cap{position:absolute;left:20px;right:20px;bottom:20px;display:grid;gap:6px}
+.reel .cap b{font:400 1.35rem/1.15 var(--display);font-style:italic}
+.reel .cap small{opacity:.85;font-size:.82rem}
+.reels-foot{display:flex;justify-content:center;margin-top:clamp(70px,8vw,100px)}
+.ig-btn svg{width:18px;height:18px}
+.ig-btn:hover .ig-ring{transform:rotate(90deg)}
+.ig-ring{transition:transform .6s var(--ease);transform-origin:center;transform-box:fill-box}
+@media (max-width:760px){.reel-row{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;padding-bottom:12px;margin-right:calc(-1 * var(--gutR))}.reel{flex:0 0 72%;scroll-snap-align:start}.reel:nth-child(2){transform:none}.reel:nth-child(2):hover{transform:translateY(-8px)}.reels-foot{margin-top:32px}}
+
+/* reviews */
+.trust .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:center}
+.trust-card{border:1px solid var(--line);border-radius:24px;padding:clamp(24px,4vw,44px);display:grid;gap:16px;background:var(--paper)}
+.trust-card .stars{display:flex;gap:4px;color:var(--sage)}
+.trust-card .stars svg{width:22px;height:22px}
+@media (max-width:860px){.trust .wrap{grid-template-columns:1fr}}
+
+/* location */
+.loc{background:var(--mist);position:relative;overflow:hidden}
+.loc .wrap{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(28px,5vw,72px);align-items:center}
+.loc-list{display:grid;gap:0;margin-top:28px;border-top:1px solid var(--line)}
+.loc-list div{display:grid;grid-template-columns:110px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+.loc-list dt{font:600 .72rem/1.6 var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--moss)}
+.loc-list dd{margin:0;font-weight:500;user-select:all}
+.mapcard{position:relative;border-radius:999px 999px 30px 30px;overflow:hidden;aspect-ratio:1/1;max-width:100%;background:#f3f6ef;border:1px solid var(--line)}
+.mapcard svg{width:100%;height:100%;display:block}
+.mapcard .pin{position:absolute;left:52%;top:50%;transform:translate(-50%,-100%);display:grid;justify-items:center;gap:8px}
+.mapcard .pin b{background:var(--forest);color:#fff;font:600 .8rem/1 var(--body);padding:.7em 1em;border-radius:999px;white-space:nowrap}
+.mapcard .pin i{width:16px;height:16px;border-radius:50%;background:var(--leaf);box-shadow:0 0 0 8px rgba(17,106,60,.18),0 0 0 18px rgba(17,106,60,.08)}
+.mapcard .attr{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);font-size:.72rem;color:var(--muted);background:rgba(255,255,255,.85);padding:.3em .7em;border-radius:6px;white-space:nowrap}
+@media (max-width:860px){.loc .wrap{grid-template-columns:1fr}.mapcard{aspect-ratio:4/3.4;border-radius:200px 200px 24px 24px}}
+
+/* CTA band */
+.cta-band .wrap{display:grid;grid-template-columns:minmax(0,1.3fr) auto;gap:32px;align-items:end;padding-block:clamp(48px,6vw,80px);border-top:1px solid var(--line)}
+@media (max-width:760px){.cta-band .wrap{grid-template-columns:1fr}}
+
+/* footer */
+.ftr{background:var(--off);border-top:1px solid var(--line);padding-block:64px calc(32px + env(safe-area-inset-bottom,0px))}
+.ftr-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px}
+.ftr .brand{width:180px}
+.ftr h4{font:600 .72rem/1 var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--moss);margin:0 0 16px}
+.ftr ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.ftr a{text-decoration:none;color:var(--ink)}
+.ftr a:hover{color:var(--leaf)}
+.ftr small{display:block;margin-top:48px;color:var(--muted);font-size:.8rem}
+@media (max-width:860px){.ftr-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.ftr-grid{grid-template-columns:1fr}}
+
+/* page hero (inner pages) */
+.phero{padding-block:clamp(36px,5vw,64px) clamp(48px,6vw,80px)}
+.phero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:end}
+.phero .copy{display:grid;gap:22px}
+.phero .img{border-radius:999px 999px 26px 26px;overflow:hidden;aspect-ratio:4/4.4;max-width:100%;background:var(--sage)}
+.phero .img img{width:100%;height:100%;object-fit:cover}
+.phero.wide .wrap{grid-template-columns:1fr}
+.phero.wide .img{aspect-ratio:21/8;border-radius:300px 300px 26px 26px}
+.crumbs{font-size:.82rem;color:var(--muted);display:flex;gap:8px;flex-wrap:wrap}
+.crumbs a{text-decoration:none;color:var(--leaf)}
+@media (max-width:860px){.phero .wrap{grid-template-columns:1fr}.phero .img{aspect-ratio:4/3.2;border-radius:220px 220px 22px 22px}.phero.wide .img{aspect-ratio:4/3}}
+
+/* category rows */
+.cats{display:grid;gap:clamp(56px,8vw,110px)}
+.cat{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:center}
+.cat:nth-child(even) .cat-card{order:2}
+.cat-card{position:relative;border-radius:26px;overflow:hidden;aspect-ratio:5/4;max-width:100%;background:var(--sage)}
+.cat-card img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease)}
+.cat-card:hover img{transform:scale(1.05)}
+.cat-body{display:grid;gap:18px}
+.cat-body .num{font:300 .9rem/1 var(--display);font-style:italic;color:var(--moss)}
+.svc-list{list-style:none;margin:8px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line)}
+.svc-list li{border-bottom:1px solid var(--line)}
+.svc-list a{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:13px 4px;text-decoration:none;font-weight:500;font-size:.95rem}
+.svc-list a:hover{color:var(--leaf)}
+.svc-list a svg{width:14px;height:14px;flex:none;opacity:.5;transition:transform .35s var(--ease),opacity .3s}
+.svc-list a:hover svg{opacity:1;transform:translateX(4px)}
+.svc-list li:nth-child(odd) a{padding-right:16px}
+@media (max-width:860px){.cat{grid-template-columns:1fr}.cat:nth-child(even) .cat-card{order:0}}
+@media (max-width:480px){.svc-list{grid-template-columns:1fr}}
+
+/* service detail */
+.sd .wrap{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:clamp(32px,6vw,90px);align-items:start}
+.sd .prose{display:grid;gap:22px;max-width:62ch}
+.sd .prose h2{font-size:clamp(1.6rem,2.6vw,2.2rem);margin-top:18px}
+.sd ul.ticks{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.sd ul.ticks li{display:grid;grid-template-columns:22px 1fr;gap:10px}
+.sd ul.ticks li::before{content:"";width:14px;height:14px;margin-top:6px;border-radius:2px 50%;background:var(--sage);border:1px solid var(--moss)}
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;counter-reset:s}
+.steps div{border-top:1px solid var(--forest);padding-top:14px;display:grid;gap:6px;font-size:.92rem;color:var(--muted)}
+.steps div b{color:var(--forest);font:500 1.1rem/1.2 var(--display)}
+.steps div b::before{counter-increment:s;content:counter(s) ". ";color:var(--moss);font-style:italic}
+@media (max-width:700px){.steps{grid-template-columns:1fr 1fr}}
+.aside{position:sticky;top:110px;display:grid;gap:18px;background:var(--mist);border-radius:24px;padding:28px}
+.aside h3{font-size:1.3rem}
+.aside ul{list-style:none;padding:0;margin:0;display:grid;gap:2px}
+.aside ul a{display:block;padding:8px 0;text-decoration:none;border-bottom:1px solid var(--line);font-size:.93rem}
+.aside ul a:hover{color:var(--leaf)}
+@media (max-width:900px){.sd .wrap{grid-template-columns:1fr}.aside{position:static}}
+
+/* pool page */
+.pool-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:0;border-top:1px solid var(--line)}
+.pool-item{padding:28px 24px 28px 0;border-bottom:1px solid var(--line);display:grid;gap:10px;align-content:start}
+.pool-item h3{font-size:1.35rem}
+.pool-item p{color:var(--muted);font-size:.95rem}
+.pool-item a{font-weight:600;font-size:.88rem;color:var(--leaf);text-decoration:none;display:inline-flex;gap:.4em;align-items:center}
+.notice{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start;background:var(--mist);border-radius:20px;padding:24px 26px}
+.notice svg{width:26px;height:26px;color:var(--leaf)}
+
+/* portfolio */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}
+.filters button{border:1.5px solid var(--line);background:var(--paper);border-radius:999px;padding:.65em 1.15em;font-weight:600;font-size:.88rem;cursor:pointer;transition:all .3s}
+.filters button[aria-pressed="true"]{background:var(--forest);border-color:var(--forest);color:#fff}
+.filters button:disabled{opacity:.5;cursor:not-allowed}
+.masonry{columns:3 300px;column-gap:16px}
+.pf{break-inside:avoid;margin:0 0 16px;position:relative;border-radius:18px;overflow:hidden;cursor:zoom-in;background:var(--sage);display:block;width:100%;border:0;padding:0;text-align:left}
+.pf img{width:100%;height:auto;transition:transform 1.2s var(--ease)}
+.pf:hover img{transform:scale(1.05)}
+.pf figcaption{position:absolute;left:0;right:0;bottom:0;padding:40px 18px 16px;background:linear-gradient(180deg,transparent,rgba(8,32,18,.78));color:#fff;display:grid;gap:2px;transform:translateY(8px);opacity:.0;transition:all .5s var(--ease)}
+.pf:hover figcaption,.pf:focus-visible figcaption{opacity:1;transform:none}
+@media (hover:none){.pf figcaption{opacity:1;transform:none}}
+.pf figcaption b{font:400 1.15rem/1.2 var(--display)}
+.pf figcaption small{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;opacity:.85}
+.lb{position:fixed;inset:0;z-index:90;background:rgba(14,30,20,.94);display:grid;grid-template-rows:auto 1fr auto;padding:calc(env(safe-area-inset-top,0px) + 14px) var(--gutR) calc(env(safe-area-inset-bottom,0px) + 18px) var(--gut);color:#fff}
+.lb[hidden]{display:none}
+.lb-top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.lb-stage{display:grid;place-items:center;min-height:0;padding:16px 0}
+.lb-stage img{max-height:100%;max-width:100%;object-fit:contain;border-radius:12px}
+.lb-foot{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.lb button{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:999px;padding:.6em 1.1em;cursor:pointer;font-weight:600}
+.lb button:hover{background:rgba(255,255,255,.2)}
+
+/* about */
+.story .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,96px);align-items:center}
+.story .pair{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:end}
+.story .pair img{border-radius:18px;width:100%;object-fit:cover}
+.story .pair img:first-child{aspect-ratio:3/4;border-radius:200px 200px 18px 18px}
+.story .pair img:last-child{aspect-ratio:1;margin-bottom:40px}
+.values{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,3vw,40px)}
+.values div{display:grid;gap:10px;align-content:start;padding-top:20px;border-top:1px solid var(--forest)}
+.values p{color:var(--muted)}
+@media (max-width:860px){.story .wrap{grid-template-columns:1fr}.values{grid-template-columns:1fr}}
+
+/* interior */
+.int-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.int-card{display:grid;gap:14px;align-content:start}
+.int-card .ph{border-radius:20px;overflow:hidden;aspect-ratio:4/3.2;background:var(--stone);position:relative}
+.int-card .ph img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.int-card:hover .ph img{transform:scale(1.05)}
+.int-card p{color:var(--muted);font-size:.95rem}
+.int-card .lines{position:absolute;inset:14px;pointer-events:none}
+.int-card .lines rect,.int-card .lines line{fill:none;stroke:rgba(255,255,255,.8);stroke-width:1;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.4s var(--ease)}
+.int-card:hover .lines *{stroke-dashoffset:0}
+@media (max-width:900px){.int-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.int-grid{grid-template-columns:1fr}}
+.insp{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:200px;gap:14px}
+.insp img{width:100%;height:100%;object-fit:cover;border-radius:16px}
+.insp img:nth-child(1){grid-column:span 2;grid-row:span 2}
+.insp img:nth-child(4){grid-row:span 2}
+@media (max-width:760px){.insp{grid-template-columns:1fr 1fr;grid-auto-rows:150px}}
+.process{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.process div{display:grid;gap:8px;padding:24px;background:var(--paper);border-radius:20px;align-content:start}
+.process b{font:400 2.2rem/1 var(--display);font-style:italic;color:var(--sage);-webkit-text-stroke:1px var(--moss)}
+.process p{color:var(--muted);font-size:.93rem}
+@media (max-width:860px){.process{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.process{grid-template-columns:1fr}}
+
+/* estimate */
+.est .wrap{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(28px,5vw,72px);align-items:start}
+.est-side{position:sticky;top:100px;display:grid;gap:24px}
+.est-side .img{border-radius:999px 999px 24px 24px;overflow:hidden;aspect-ratio:4/3.6;max-width:100%}
+.est-side .img img{width:100%;height:100%;object-fit:cover}
+.est-steps{display:grid;gap:12px;margin:0;padding:0;list-style:none;counter-reset:e}
+.est-steps li{display:grid;grid-template-columns:34px 1fr;gap:12px;font-size:.95rem;color:var(--muted)}
+.est-steps li::before{counter-increment:e;content:counter(e);width:30px;height:30px;border-radius:50%;border:1px solid var(--moss);display:grid;place-items:center;font:500 .9rem/1 var(--display);color:var(--forest)}
+.est-steps b{color:var(--ink)}
+.form{background:var(--mist);border-radius:28px;padding:clamp(22px,4vw,48px);display:grid;gap:20px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:600px){.row2{grid-template-columns:1fr}}
+.fld{display:grid;gap:7px;min-width:0}
+.fld label,.fld legend{font:600 .82rem/1.2 var(--body);color:var(--forest)}
+.fld label .opt{font-weight:500;color:var(--muted)}
+.fld input,.fld select,.fld textarea{width:100%;background:var(--paper);border:1.5px solid var(--line);border-radius:14px;padding:.9em 1em;font-size:1rem;transition:border-color .25s,box-shadow .25s}
+.fld textarea{min-height:130px;resize:vertical}
+.fld input:focus,.fld select:focus,.fld textarea:focus{outline:none;border-color:var(--leaf);box-shadow:0 0 0 4px rgba(17,106,60,.14)}
+.fld.bad input,.fld.bad select,.fld.bad textarea{border-color:#b3412e}
+.err{color:#9d3a28;font-size:.82rem;font-weight:600;min-height:0}
+.err:empty{display:none}
+fieldset.fld{border:0;padding:0;margin:0}
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.seg label{position:relative;display:grid;gap:4px;padding:16px 18px;background:var(--paper);border:1.5px solid var(--line);border-radius:16px;cursor:pointer;font-weight:600;color:var(--ink);transition:all .3s}
+.seg label small{font-weight:500;color:var(--muted);font-size:.82rem}
+.seg input{position:absolute;opacity:0;pointer-events:none}
+.seg input:checked+span{color:var(--forest)}
+.seg label:has(input:checked){border-color:var(--leaf);background:#fbfdf9;box-shadow:0 0 0 4px rgba(17,106,60,.1)}
+.seg label:has(input:focus-visible){outline:2px solid var(--leaf);outline-offset:2px}
+.drop{border:1.5px dashed var(--moss);border-radius:16px;padding:18px;background:var(--paper);display:grid;gap:6px;text-align:center;cursor:pointer;color:var(--muted);font-size:.9rem}
+.drop:hover{background:#fbfdf9}
+.drop input{position:absolute;width:1px;height:1px;opacity:0}
+.files{list-style:none;padding:0;margin:0;display:grid;gap:6px;font-size:.85rem}
+.files li{display:flex;justify-content:space-between;gap:10px;background:var(--paper);border-radius:10px;padding:8px 12px}
+.check{display:grid;grid-template-columns:22px 1fr;gap:10px;font-size:.88rem;color:var(--muted);align-items:start}
+.check input{width:18px;height:18px;margin-top:3px;accent-color:var(--forest)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.submit-row{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+.btn[aria-busy="true"]{opacity:.75;pointer-events:none}
+.spinner{width:16px;height:16px;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.result{background:var(--paper);border:1.5px solid var(--leaf);border-radius:20px;padding:22px;display:grid;gap:12px}
+.result pre{white-space:pre-wrap;word-break:break-word;background:var(--off);border-radius:12px;padding:14px;font:500 .85rem/1.55 ui-monospace,SFMono-Regular,Menlo,monospace;margin:0;max-height:300px;overflow:auto;user-select:all}
+.copyline{display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-size:.9rem}
+.copyline code{background:var(--mist);padding:.3em .6em;border-radius:6px;user-select:all}
+@media (max-width:900px){.est .wrap{grid-template-columns:1fr}.est-side{position:static}}
+
+/* contact */
+.contact-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.ccard{border:1px solid var(--line);border-radius:22px;padding:26px;display:grid;gap:10px;align-content:start}
+.ccard svg{width:26px;height:26px;color:var(--leaf)}
+.ccard .v{font:400 1.25rem/1.3 var(--display);color:var(--forest);user-select:all;word-break:break-word}
+.ccard .small{display:flex;gap:10px;flex-wrap:wrap}
+.linkbtn{background:none;border:0;padding:0;color:var(--leaf);font-weight:600;font-size:.88rem;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+@media (max-width:860px){.contact-cards{grid-template-columns:1fr}}
+
+/* intro */
+.intro{position:fixed;inset:0;z-index:100;background:var(--mist);display:grid;place-items:center;overflow:hidden;border-radius:0}
+.intro .tex{position:absolute;inset:0;width:100%;height:100%;opacity:.55;pointer-events:none}
+.intro .lgwrap{position:relative;width:min(560px,82vw)}
+.intro .lgwrap svg{width:100%;height:auto;display:block;overflow:visible}
+.intro .sweep{position:absolute;inset:0;-webkit-mask:url(img/logo.svg) center/100% 100% no-repeat;mask:url(img/logo.svg) center/100% 100% no-repeat;background:linear-gradient(105deg,transparent 42%,rgba(220,255,228,.75) 50%,transparent 58%) 160% 0/250% 100% no-repeat;pointer-events:none}
+.intro .skip{position:absolute;right:calc(var(--gutR) + 8px);bottom:calc(env(safe-area-inset-bottom,0px) + 22px);background:none;border:1px solid var(--line);border-radius:999px;padding:.6em 1.1em;font:600 .78rem/1 var(--body);letter-spacing:.08em;color:var(--muted);cursor:pointer}
+.intro .skip:hover{color:var(--forest);border-color:var(--moss)}
+.lg-u .f,.lg-tri,.lg-l,.lg-s,.crease{transform-box:fill-box}
+.flylogo{position:fixed;z-index:101;pointer-events:none;transform-origin:0 0}
+
+.notes-toggle{position:fixed;left:calc(var(--gut) + 0px);bottom:calc(env(safe-area-inset-bottom,0px) + 16px);z-index:55;display:flex;gap:6px}
+.notes-toggle button{background:#fbf3df;border:1px solid #d8b866;color:#6d4f0d;border-radius:999px;padding:.55em .95em;font:700 .74rem/1 var(--body);cursor:pointer;box-shadow:0 6px 20px -10px rgba(0,0,0,.3)}
+.notes-panel{position:fixed;left:var(--gut);right:var(--gutR);bottom:calc(env(safe-area-inset-bottom,0px) + 64px);z-index:56;max-width:560px;max-height:70vh;overflow:auto;background:var(--paper);border:1px solid #d8b866;border-radius:18px;padding:22px 24px;box-shadow:0 30px 60px -30px rgba(0,0,0,.35);font-size:.9rem}
+.notes-panel h3{font-size:1.3rem;margin-bottom:6px}
+.notes-panel ul{padding-left:18px;margin:8px 0 14px;display:grid;gap:6px;color:var(--muted)}
+.notes-panel h4{margin:14px 0 0;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--leaf)}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-delay:0s!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+  .sr,.draw *{animation:none!important}
+  .draw path,.draw line,.draw circle,.draw ellipse{stroke-dasharray:none!important}
+}
+@media (max-width:760px){.reel:hover,.tile:hover img{transform:none}}
+</style>
+
+</head><body>
+<div class="intro" id="intro" hidden aria-hidden="true">
+  <svg class="tex" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g fill="none" stroke="#c6d9c2" stroke-width="1">
+      <path d="M-20 700 C 120 640 200 560 240 430 C 270 330 250 250 300 170"/>
+      <path d="M240 430 C 200 410 170 380 160 340 M246 400 C 290 380 320 350 330 310 M262 330 C 230 310 214 284 210 252 M280 250 C 310 236 330 214 338 186"/>
+      <path d="M1220 120 C 1080 170 1010 250 980 360 C 960 440 975 520 930 600"/>
+      <path d="M980 360 C 1020 375 1050 400 1062 440 M972 400 C 935 420 912 448 905 485 M960 470 C 990 492 1006 518 1010 552"/>
+    </g>
+  </svg>
+  <div class="lgwrap" id="introLogo"></div>
+  <button class="skip" id="skipIntro" type="button">Skip intro</button>
+</div>
+
+<div class="wipe" id="wipe" aria-hidden="true"></div>
+
+<header class="hdr" id="hdr">
+  <div class="wrap">
+    <a class="brand" href="#home" id="brandLink" aria-label="Unicorn Landscaping, home"></a>
+    <nav class="nav" aria-label="Main">
+      <a href="#home" data-r="home">Home</a>
+      <a href="#outdoor-services" data-r="outdoor-services">Outdoor Living</a>
+      <a href="#interior-services" data-r="interior-services">Indoor Living</a>
+      <a href="#pool-services" data-r="pool-services">Pool Services</a>
+      <a href="#portfolio" data-r="portfolio">Our Work</a>
+      <a href="#about" data-r="about">About</a>
+      <a href="#contact" data-r="contact">Contact</a>
+      <a class="btn btn-p" href="#get-a-free-estimate" data-r="get-a-free-estimate">Get a Free Estimate</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mnav"><i></i>Menu</button>
+  </div>
+</header>
+
+<div class="mnav" id="mnav" role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="mnav-top"><span class="brand" id="mBrand"></span><button class="close-btn" id="menuClose" type="button">Close</button></div>
+  <nav aria-label="Mobile">
+    <a href="#home">Home</a><a href="#outdoor-services">Outdoor Living</a><a href="#interior-services">Indoor Living</a><a href="#pool-services">Pool Services</a><a href="#portfolio">Our Work</a><a href="#about">About</a><a href="#contact">Contact</a><a href="#get-a-free-estimate">Get a Free Estimate</a>
+  </nav>
+  <div class="meta"><span>81 Vedette Wy, Vaughan, ON L4H 4K3</span><span>+1 647-904-0668</span><span>info@unicornlandscaping.ca</span></div>
+</div>
+
+<main id="main" tabindex="-1"></main>
+
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr-grid">
+      <div style="display:grid;gap:18px;align-content:start">
+        <span class="brand" id="fBrand"></span>
+        <p style="color:var(--muted);max-width:34ch">Landscaping, stonework and outdoor living, designed and built in Vaughan and across the Greater Toronto Area.</p>
+        <a class="btn btn-s ig-btn" href="https://www.instagram.com/unicorn_landscaping/" target="_blank" rel="noopener" style="justify-self:start">@unicorn_landscaping</a>
+      </div>
+      <div><h4>Outdoor</h4><ul><li><a href="#outdoor-services">All outdoor services</a></li><li><a href="#service-interlocking-patio">Interlocking</a></li><li><a href="#service-deck-construction">Decks &amp; structures</a></li><li><a href="#service-outdoor-kitchen">Outdoor kitchens</a></li><li><a href="#pool-services">Pool services</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="#about">About</a></li><li><a href="#portfolio">Our work</a></li><li><a href="#interior-services">Indoor living</a></li><li><a href="#get-a-free-estimate">Free estimate</a></li><li><a href="#contact">Contact</a></li></ul></div>
+      <div><h4>Visit</h4><ul><li>81 Vedette Wy<br>Vaughan, ON L4H 4K3</li><li>+1 647-904-0668</li><li style="word-break:break-all">info@unicornlandscaping.ca</li></ul></div>
+    </div>
+    <small>© 2026 Unicorn Landscaping Inc. All rights reserved.</small>
+  </div>
+</footer>
+
+<div class="notes-toggle"><button type="button" id="notesBtn" aria-expanded="false">Demo notes</button><button type="button" id="hideNotes">Hide demo tags</button></div>
+<div class="notes-panel" id="notesPanel" hidden>
+  <h3>Before launch</h3>
+  <p style="color:var(--muted)">This preview shows the creative direction and working flows. These items need Chan's input or approval.</p>
+  <h4>Photography</h4>
+  <ul>
+    <li>Most photos on the current site are Unilock catalogue images or photos credited to other contractors, plus several AI-generated images. They appear here as placeholders only and are never labelled as Unicorn projects. Replace with Unicorn's own project photography.</li>
+    <li>Interior images are editorial inspiration (Unsplash), clearly labelled as such.</li>
+    <li>Before/after slider is ready to switch on once real paired photos are supplied.</li>
+  </ul>
+  <h4>Content to confirm</h4>
+  <ul>
+    <li>Which interior services Unicorn offers. All six interior categories are marked unconfirmed.</li>
+    <li>Pool services: relationship with ontariopoolservice.ca and whether enquiries stay with Unicorn.</li>
+    <li>"10+ years of experience" claim. Not migrated: $16M revenue, 900 vs 150+ projects (conflicting), lifetime warranty, Eurobeton / Stein + Design partnership, commercial references, environmental claims.</li>
+    <li>Reviews on the current site could not be verified, so none are shown. Connect the Google Business Profile.</li>
+    <li>Service areas beyond Vaughan and the GTA.</li>
+    <li>Reel captions and cover frames for the three featured Reels.</li>
+  </ul>
+  <h4>Production build</h4>
+  <ul>
+    <li>Estimate form needs an inbox or CRM destination and server-side handling. This preview does not send anything.</li>
+    <li>Official Google Maps and Instagram embeds are enabled in the production build; this preview environment blocks embedded frames, so both link out.</li>
+  </ul>
+</div>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Project gallery">
+  <div class="lb-top"><span id="lbCount" style="font-size:.85rem;opacity:.8"></span><button type="button" id="lbClose">Close</button></div>
+  <div class="lb-stage"><img id="lbImg" alt=""></div>
+  <div class="lb-foot"><div><b id="lbTitle" style="font:400 1.3rem/1.2 var(--display)"></b><div id="lbCat" style="font-size:.8rem;opacity:.75;letter-spacing:.1em;text-transform:uppercase"></div></div><div style="display:flex;gap:8px"><button type="button" id="lbPrev">Previous</button><button type="button" id="lbNext">Next</button></div></div>
+</div>
+
+<script>
+(function(){
+"use strict";
+/* ---------- logo (traced from the official mark; Montserrat outlines fitted to the original wordmark) ---------- */
+const LOGO = `<svg class="LOGOCLASS" viewBox="44 56 688 218" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Unicorn Landscaping"><g class="lg-u">
+<polygon class="f" points="51,115 97,115 97,166" fill="#005420"/>
+<polygon class="f" points="51,115 97,166 51,218" fill="#0d6b3a"/>
+<polygon class="f" points="51,218 97,166 97,265" fill="#0a6334"/>
+<polygon class="f" points="191,115 145,115 145,166" fill="#005420"/>
+<polygon class="f" points="191,115 145,166 191,218" fill="#0d6b3a"/>
+<polygon class="f" points="191,218 145,166 145,265" fill="#0a6334"/>
+<polygon class="f" points="97,220 145,220 145,265 97,265" fill="#0e6c3b"/>
+<path class="crease" d="M97 170 L54 219 M145 170 L188 219 M99.5 221 V264 M142.5 221 V264" stroke="#004a1c" stroke-width="1.2" opacity=".55" fill="none"/>
+</g>
+<polygon class="lg-tri" points="145,108 191,108 191,63" fill="#005420"/><g class="lg-nicorn"><path class="lg-l" fill="#005420" d="M207 204V113H227.12L276.56 174.37H267.03V113H291V204H270.88L221.44 142.63H230.97V204Z"/><path class="lg-l" fill="#005420" d="M308 204V113H333V204Z"/><path class="lg-l" fill="#005420" d="M394.76 205.76Q384.48 205.76 375.73 202.31Q366.98 198.87 360.56 192.52Q354.13 186.17 350.57 177.53Q347 168.89 347 158.5Q347 148.11 350.57 139.47Q354.13 130.83 360.58 124.48Q367.03 118.13 375.78 114.69Q384.52 111.24 394.8 111.24Q406.75 111.24 416.22 115.58Q425.7 119.91 432 128.2L416.76 142.68Q412.55 137.47 407.39 134.72Q402.24 131.97 395.99 131.97Q390.5 131.97 385.97 133.86Q381.44 135.74 378.15 139.26Q374.85 142.78 373.03 147.67Q371.2 152.56 371.2 158.5Q371.2 164.44 373.03 169.33Q374.85 174.22 378.15 177.74Q381.44 181.26 385.97 183.14Q390.5 185.03 395.99 185.03Q402.24 185.03 407.39 182.28Q412.55 179.53 416.76 174.27L432 188.76Q425.7 196.96 416.22 201.36Q406.75 205.76 394.76 205.76Z"/><path class="lg-l" fill="#005420" d="M485.57 205.76Q475.09 205.76 466.19 202.25Q457.28 198.74 450.77 192.35Q444.25 185.96 440.62 177.33Q437 168.71 437 158.46Q437 148.22 440.62 139.65Q444.25 131.08 450.77 124.66Q457.3 118.25 466.18 114.75Q475.06 111.24 485.52 111.24Q496.06 111.24 504.89 114.74Q513.72 118.23 520.24 124.63Q526.75 131.03 530.38 139.62Q534 148.2 534 158.47Q534 168.73 530.38 177.37Q526.75 186.01 520.24 192.39Q513.72 198.77 504.89 202.26Q496.06 205.76 485.57 205.76ZM485.52 185.03Q490.67 185.03 495.06 183.14Q499.45 181.25 502.73 177.75Q506.01 174.26 507.85 169.38Q509.68 164.49 509.68 158.49Q509.68 152.48 507.85 147.61Q506.02 142.75 502.74 139.25Q499.45 135.75 495.06 133.86Q490.68 131.97 485.53 131.97Q480.37 131.97 475.97 133.87Q471.57 135.76 468.28 139.26Q464.98 142.76 463.15 147.63Q461.32 152.49 461.32 158.48Q461.32 164.47 463.15 169.36Q464.98 174.24 468.27 177.75Q471.56 181.26 475.96 183.14Q480.37 185.03 485.52 185.03Z"/><path class="lg-l" fill="#005420" d="M547 204V113H586.2Q605.47 113 615.85 121.98Q626.24 130.95 626.24 146.54Q626.24 156.84 621.47 164.28Q616.7 171.72 607.91 175.69Q599.13 179.65 587.02 179.65H560.5L571.35 169.06V204ZM601.9 204 579.9 170.9H605.8L628 204ZM571.35 171.8 560.5 160.24H585.62Q593.69 160.24 597.68 156.59Q601.68 152.95 601.68 146.54Q601.68 140.08 597.68 136.46Q593.69 132.84 585.62 132.84H560.5L571.35 121.23Z"/><path class="lg-l" fill="#005420" d="M640 204V113H660.12L709.56 174.37H700.03V113H724V204H703.88L654.44 142.63H663.97V204Z"/></g><g class="lg-land"><path class="lg-s" fill="#116a3c" d="M332 263V226H337.25V258.42H357.33V263Z"/><path class="lg-s" fill="#116a3c" d="M357.19 263 373.97 226H379.18L396 263H390.45L375.48 228.94H377.62L362.65 263ZM364.32 253.77 365.79 249.5H386.59L388.1 253.77Z"/><path class="lg-s" fill="#116a3c" d="M402 263V226H406.36L430.96 256.38H428.71V226H434V263H429.64L405.04 232.62H407.29V263Z"/><path class="lg-s" fill="#116a3c" d="M445 263V226H460.32Q466.18 226 470.61 228.34Q475.04 230.68 477.52 234.83Q480 238.98 480 244.5Q480 250.02 477.52 254.17Q475.04 258.32 470.61 260.66Q466.18 263 460.32 263ZM450.17 258.42H460.04Q464.55 258.42 467.85 256.67Q471.15 254.91 472.97 251.77Q474.79 248.64 474.79 244.5Q474.79 240.32 472.97 237.21Q471.15 234.09 467.85 232.33Q464.55 230.58 460.04 230.58H450.17Z"/><path class="lg-s" fill="#116a3c" d="M498.92 263.43Q495.06 263.43 491.53 262.12Q488.01 260.82 486 258.77L487.78 254.65Q489.69 256.49 492.69 257.71Q495.68 258.94 498.92 258.94Q501.85 258.94 503.68 258.19Q505.51 257.43 506.38 256.14Q507.25 254.84 507.25 253.24Q507.25 251.31 506.13 250.14Q505.01 248.98 503.21 248.28Q501.4 247.58 499.21 247.03Q497.03 246.49 494.84 245.79Q492.65 245.09 490.84 243.97Q489.04 242.85 487.92 240.99Q486.8 239.12 486.8 236.17Q486.8 233.29 488.19 230.89Q489.57 228.48 492.44 227.03Q495.31 225.57 499.76 225.57Q502.7 225.57 505.6 226.43Q508.49 227.29 510.61 228.87L509.02 233.06Q506.83 231.51 504.41 230.79Q501.99 230.06 499.73 230.06Q496.9 230.06 495.07 230.86Q493.24 231.66 492.4 232.98Q491.55 234.3 491.55 235.96Q491.55 237.89 492.67 239.06Q493.79 240.22 495.6 240.9Q497.4 241.58 499.59 242.15Q501.78 242.71 503.97 243.39Q506.15 244.08 507.96 245.17Q509.77 246.27 510.88 248.13Q512 249.98 512 252.88Q512 255.72 510.59 258.12Q509.18 260.52 506.28 261.98Q503.38 263.43 498.92 263.43Z"/><path class="lg-s" fill="#116a3c" d="M537.18 263.43Q533.05 263.43 529.55 262.03Q526.05 260.62 523.47 258.07Q520.89 255.51 519.44 252.06Q518 248.61 518 244.5Q518 240.39 519.44 236.94Q520.89 233.49 523.49 230.93Q526.09 228.38 529.59 226.97Q533.1 225.57 537.22 225.57Q541.41 225.57 544.97 227.03Q548.54 228.48 551 231.35L547.66 234.68Q545.57 232.43 542.99 231.35Q540.41 230.28 537.44 230.28Q534.36 230.28 531.76 231.34Q529.16 232.4 527.24 234.31Q525.31 236.23 524.25 238.82Q523.19 241.42 523.19 244.5Q523.19 247.58 524.25 250.18Q525.31 252.77 527.24 254.69Q529.16 256.6 531.76 257.66Q534.36 258.72 537.44 258.72Q540.41 258.72 542.99 257.64Q545.57 256.57 547.66 254.27L551 257.6Q548.54 260.47 544.97 261.95Q541.41 263.43 537.18 263.43Z"/><path class="lg-s" fill="#116a3c" d="M554 263 569.56 226H574.4L590 263H584.86L570.97 228.94H572.95L559.06 263ZM560.61 253.77 561.97 249.5H581.27L582.68 253.77Z"/><path class="lg-s" fill="#116a3c" d="M596 263V226H610.51Q615.34 226 618.81 227.54Q622.27 229.09 624.14 231.98Q626 234.88 626 238.92Q626 242.9 624.14 245.8Q622.27 248.7 618.81 250.24Q615.34 251.79 610.51 251.79H598.91L601.28 249.3V263ZM601.28 249.82 598.91 247.21H610.34Q615.44 247.21 618.06 245.04Q620.68 242.86 620.68 238.92Q620.68 234.92 618.06 232.75Q615.44 230.58 610.34 230.58H598.91L601.28 227.97Z"/><path class="lg-s" fill="#116a3c" d="M634 263V226H639V263Z"/><path class="lg-s" fill="#116a3c" d="M650 263V226H654.36L678.96 256.38H676.71V226H682V263H677.64L653.04 232.62H655.29V263Z"/><path class="lg-s" fill="#116a3c" d="M709.1 263.43Q704.98 263.43 701.49 262.03Q698 260.62 695.43 258.07Q692.85 255.51 691.43 252.06Q690 248.61 690 244.5Q690 240.39 691.43 236.94Q692.85 233.49 695.45 230.93Q698.04 228.38 701.53 226.97Q705.02 225.57 709.19 225.57Q713.47 225.57 717 227Q720.52 228.43 723 231.26L719.79 234.59Q717.59 232.34 715.01 231.31Q712.44 230.28 709.4 230.28Q706.31 230.28 703.7 231.34Q701.08 232.4 699.15 234.31Q697.23 236.23 696.18 238.82Q695.13 241.42 695.13 244.5Q695.13 247.54 696.18 250.13Q697.23 252.73 699.15 254.67Q701.08 256.6 703.68 257.66Q706.27 258.72 709.36 258.72Q712.22 258.72 714.85 257.79Q717.48 256.87 719.75 254.71L722.65 258.71Q720 261.05 716.44 262.24Q712.87 263.43 709.1 263.43ZM722.65 258.71 717.75 258.03V244.29H722.65Z"/></g></svg>`;
+const logo = (cls) => LOGO.replace('LOGOCLASS', cls || '');
+
+/* ---------- data ---------- */
+const IG = 'https://www.instagram.com/unicorn_landscaping/';
+const ARROW = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg>';
+const IGICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle class="ig-ring" cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg>';
+const SIZES = {"hero":[1300,649],"pool-pavilion-dining":[1300,649],"fire-pit-patio":[1300,901],"outdoor-kitchen-pavilion":[1300,700],"night-terrace":[1300,700],"water-feature":[1300,700],"pool-evening":[750,501],"bar-patio":[444,400],"driveway":[444,400],"fire-table":[444,400],"garden-border":[444,400],"pool-patio":[444,400],"entry-steps":[444,400],"pool-cabana":[510,300],"pool-coping":[510,300],"circular-steps":[340,230],"lounge-pavers":[340,480],"pergola":[340,230],"pool-edge":[340,230],"pool-aerial":[644,644],"outdoor-fireplace":[1300,649],"lakeside-patio":[1300,649],"paver-detail":[806,552],"pool-house":[570,378],"int-living-warm":[1600,844],"int-living-plants":[1600,1200],"int-living-wood":[1600,1088],"int-loft":[1600,1067],"int-kitchen":[1600,1067],"int-kitchen-island":[1600,1800],"int-bath":[1600,1068],"int-bath-glass":[1600,1067],"int-materials":[1600,1800],"int-neutral":[1600,1172],"int-sage":[1600,1800]};
+const img = (n, alt, extra) => { const s = SIZES[n] || [1200,800]; return `<img src="img/${n}.webp" alt="${alt}" width="${s[0]}" height="${s[1]}" loading="${extra === 'eager' ? 'eager' : 'lazy'}" decoding="async"${extra && extra !== 'eager' ? ' ' + extra : ''}>`; };
+
+const CATS = {
+  design:    {name:'Landscape Design', short:'Design', img:'lakeside-patio', blurb:'Every property is different. The design starts with how you want to use your yard, the character of your home and the way light and grade move across the site.'},
+  stonework: {name:'Stonework & Interlocking', short:'Stonework', img:'fire-pit-patio', blurb:'Interlocking pavers, flagstone and natural stone for driveways, patios, walkways, steps and walls, built on a proper base so they stay level for years.'},
+  wood:      {name:'Decks & Wood Structures', short:'Wood', img:'pergola', blurb:'Decks, pergolas, gazebos, cabanas and fences that add shade, privacy and room to live outside.'},
+  pools:     {name:'Pools & Poolside Spaces', short:'Pools', img:'pool-pavilion-dining', blurb:'Pool surrounds, coping and the spaces around the water, plus opening, closing, maintenance and renovation services.'},
+  fire:      {name:'Outdoor Kitchens & Fire Features', short:'Kitchens & fire', img:'outdoor-kitchen-pavilion', blurb:'Built-in kitchens, bars, fire pits and fire tables that turn a patio into a place people gather.'},
+  care:      {name:'Maintenance & Repairs', short:'Care', img:'paver-detail', blurb:'Power washing and staining for wood, plus repairs to interlock, natural stone, brick and retaining walls.'}
+};
+const SVC = [
+  {s:'landscape-design-consultation', n:'Landscape Design Consultation', c:'design', i:'lakeside-patio', d:'A site visit and design conversation to plan the layout, materials and phasing of your outdoor project before anything is built.', confirm:true},
+  {s:'interlocking-driveway', n:'Interlocking Driveway', c:'stonework', i:'driveway', d:'A paver driveway laid over a properly excavated and compacted base, so it carries daily traffic through Ontario freeze-thaw cycles.'},
+  {s:'interlocking-patio', n:'Interlocking Patio', c:'stonework', i:'lounge-pavers', d:'Patios in interlocking pavers or large-format slabs, shaped around the way you dine, lounge and entertain.'},
+  {s:'interlocking-walkway', n:'Interlocking Walkway', c:'stonework', i:'garden-border', d:'Front and side walkways that connect the driveway, door and garden with clean lines and a stable, level surface.', old:'/our-services/stone-work/interlocking-walkway/'},
+  {s:'interlocking-steps', n:'Interlocking Steps Installation', c:'stonework', i:'entry-steps', d:'Step units and stone steps for entrances, decks and changes in grade, built level and safe underfoot.', old:'/our-services/stone-work/interlocking-steps-installation-in-ontario/'},
+  {s:'retaining-wall-installation', n:'Retaining Wall Installation', c:'stonework', i:'lakeside-patio', d:'Retaining walls that hold back soil, create level terraces and frame raised planting beds.', old:'/our-services/stone-work/retaining-wall-installation-in-ontario/'},
+  {s:'flagstone-installation', n:'Flagstone Installation', c:'stonework', i:'pool-coping', d:'Natural flagstone for patios, paths and pool surrounds, cut and fitted for an organic, timeless finish.', old:'/our-services/stone-work/flagstone-installation-in-ontario/'},
+  {s:'natural-stone-work', n:'Natural Stone Work', c:'stonework', i:'circular-steps', d:'Natural stone steps, walls, coping and accents that bring texture and permanence to a landscape.', old:'/our-services/stone-work/natural-stone-work-in-ontario/'},
+  {s:'outdoor-kitchen', n:'Outdoor Kitchen Installation', c:'fire', i:'outdoor-kitchen-pavilion', d:'Built-in outdoor kitchens and bars with stone or block bases, durable counters and room for your grill.', old:'/our-services/stone-work/outdoor-kitchen-installation-in-ontario/'},
+  {s:'outdoor-fire-pit', n:'Outdoor Fire Pit Installation', c:'fire', i:'fire-pit-patio', d:'Fire pits and fire tables that give a patio a natural gathering point on cool evenings.', old:'/our-services/stone-work/outdoor-fire-pit-installation-in-ontario/'},
+  {s:'deck-construction', n:'Deck Construction', c:'wood', i:'pool-house', d:'Decks designed around your home and yard, framed solidly and finished to suit the house.', old:'/our-services/wood-work/deck-construction-in-ontario/'},
+  {s:'pergola-installation', n:'Pergola Installation', c:'wood', i:'pergola', d:'Pergolas that define an outdoor room and filter the sun over a patio or deck.', old:'/our-services/wood-work/pergola-installation-in-ontario/'},
+  {s:'gazebo-installation', n:'Gazebo Installation', c:'wood', i:'pool-cabana', d:'Roofed gazebos that give you shade and shelter, so the yard stays usable in sun and light rain.', old:'/our-services/wood-work/gazebo-installation-in-ontario/'},
+  {s:'cabana-installation', n:'Cabana Installation', c:'wood', i:'pool-pavilion-dining', d:'Poolside cabanas for shade, storage and a place to change, styled to match the house.', old:'/our-services/wood-work/cabana-installation-in-ontario/'},
+  {s:'fence-installation', n:'Fence Installation', c:'wood', i:'garden-border', d:'Privacy and boundary fencing that frames the garden and keeps the yard secure.', old:'/our-services/wood-work/fence-installation-in-ontario/'},
+  {s:'fence-power-washing', n:'Fence Power Washing', c:'care', i:'pergola', d:'Cleaning weathered fencing to lift grime, mildew and grey fibres before staining or sealing.', old:'/our-services/wood-maintenance-services/fence-power-washing-in-ontario/'},
+  {s:'fence-staining', n:'Fence Staining', c:'care', i:'garden-border', d:'Stain that restores colour to a fence and helps protect the wood from sun and moisture.', old:'/our-services/wood-maintenance-services/fence-staining-in-ontario/'},
+  {s:'deck-pressure-washing', n:'Deck Pressure Washing', c:'care', i:'pool-house', d:'Pressure washing that clears dirt and mildew from deck boards and prepares them for a fresh finish.', old:'/our-services/wood-maintenance-services/deck-pressure-washing-in-ontario/'},
+  {s:'deck-staining', n:'Deck Staining', c:'care', i:'pool-cabana', d:'Deck staining to bring back colour and give the surface a protective finish for the seasons ahead.', old:'/our-services/wood-maintenance-services/deck-staining-in-ontario/'},
+  {s:'natural-stone-repair', n:'Natural Stone Repair', c:'care', i:'circular-steps', d:'Resetting loose stone, repointing joints and replacing damaged pieces on steps, walls and patios.', old:'/our-services/stone-repair-services/natural-stone-repair-in-ontario/'},
+  {s:'masonry-brick-repair', n:'Masonry Brick Repair', c:'care', i:'entry-steps', d:'Repairs to brick steps, walls and features, including repointing and replacing cracked or spalled brick.', old:'/our-services/stone-repair-services/masonry-brick-repair-in-ontario/'},
+  {s:'interlock-repair', n:'Interlock Repair', c:'care', i:'paver-detail', d:'Lifting and relaying sunken or heaved pavers, correcting the base and refreshing joint sand.', old:'/our-services/stone-repair-services/interlock-repair-in-ontario/'},
+  {s:'retaining-wall-repair', n:'Retaining Wall Repair', c:'care', i:'lakeside-patio', d:'Rebuilding leaning or bulging sections, improving drainage and resetting caps on existing walls.', old:'/our-services/stone-repair-services/retaining-wall-repair-in-ontario/'}
+];
+const POOL = [
+  {n:'Pool Renovations', d:'Updating an existing pool and its surroundings, from coping and surfaces to the patio around the water.', u:'https://www.ontariopoolservice.ca/pool-repairs-and-renovations'},
+  {n:'Pool Opening', d:'Getting the pool ready for the season so it is clean, balanced and running.', u:'https://www.ontariopoolservice.ca/pool-opening'},
+  {n:'Pool Closing', d:'Preparing the pool and equipment for winter to protect them through the freeze.', u:'https://www.ontariopoolservice.ca/pool-closing'},
+  {n:'Pool Equipment Installation & Repair', d:'Installing and repairing pumps, filters, heaters and other pool equipment.', u:'https://www.ontariopoolservice.ca/pool-equipment'},
+  {n:'Pool Maintenance', d:'Ongoing care that keeps the water clear and the equipment working through the season.', u:'https://www.ontariopoolservice.ca/pool-maintenance'}
+];
+const INTERIOR = [
+  {n:'Interior Design Consultation', d:'A first conversation about your space, how you use it and what you would like to change.', i:'int-neutral'},
+  {n:'Living Space Design', d:'Layouts, furnishings and finishes for living rooms and family spaces.', i:'int-living-plants'},
+  {n:'Kitchen Design', d:'Planning the layout, cabinetry and surfaces of a kitchen that works hard and looks calm.', i:'int-kitchen'},
+  {n:'Bathroom Design', d:'Bathrooms planned around light, storage and durable, beautiful materials.', i:'int-bath'},
+  {n:'Interior Renovation Planning', d:'Scoping and sequencing a renovation so decisions are made in the right order.', i:'int-living-wood'},
+  {n:'Material & Finish Selection', d:'Choosing flooring, tile, stone, wood and colour so every surface works together.', i:'int-materials'}
+];
+const REELS = [ /* configurable: swap url / poster / caption without touching the layout */
+  {url:'https://www.instagram.com/reel/Dd2OlpwxYY6/', poster:'pool-evening', title:'Featured reel', caption:'Watch the full project on Instagram'},
+  {url:'https://www.instagram.com/reel/DcM03yyiUno/', poster:'outdoor-kitchen-pavilion', title:'Featured reel', caption:'Watch the full project on Instagram'},
+  {url:'https://www.instagram.com/reel/CsVMYuKAqGV/', poster:'pool-patio', title:'Featured reel', caption:'Watch the full project on Instagram'}
+];
+const PF = [
+  {i:'hero', t:'Poolside terrace and lounge', c:'pools'},
+  {i:'fire-pit-patio', t:'Sunken fire pit patio', c:'stonework'},
+  {i:'pool-aerial', t:'Geometric pool garden', c:'pools'},
+  {i:'outdoor-kitchen-pavilion', t:'Kitchen pavilion at dusk', c:'structures'},
+  {i:'lounge-pavers', t:'Paver lounge terrace', c:'stonework'},
+  {i:'lakeside-patio', t:'Waterside patio and planting', c:'landscaping'},
+  {i:'pool-pavilion-dining', t:'Pool pavilion with dining', c:'structures'},
+  {i:'garden-border', t:'Hydrangea border and path', c:'landscaping'},
+  {i:'night-terrace', t:'Lit terrace with water feature', c:'landscaping'},
+  {i:'driveway', t:'Modern paver driveway', c:'stonework'},
+  {i:'pool-evening', t:'Evening pool and spa', c:'pools'},
+  {i:'pergola', t:'Pergola living room', c:'structures'},
+  {i:'water-feature', t:'Water wall courtyard', c:'landscaping'},
+  {i:'entry-steps', t:'Entry steps and landing', c:'stonework'},
+  {i:'outdoor-fireplace', t:'Outdoor fireplace lounge', c:'structures'},
+  {i:'pool-coping', t:'Flagstone pool coping', c:'pools'},
+  {i:'circular-steps', t:'Curved stone steps', c:'stonework'},
+  {i:'fire-table', t:'Fire table detail', c:'stonework'}
+];
+const PFCAT = {landscaping:'Landscaping', pools:'Pools', stonework:'Stonework', structures:'Decks & Structures'};
+
+/* ---------- botanical drawings ---------- */
+const BRANCH = `<svg class="bot draw" viewBox="0 0 220 300" aria-hidden="true"><path pathLength="1" d="M200 296 C 160 250 140 200 120 150 C 100 100 70 60 30 14"/><path pathLength="1" d="M150 214 C 120 210 100 196 92 172 C 118 172 140 186 150 214Z" class="leafy"/><path pathLength="1" d="M128 162 C 150 146 176 142 196 150 C 180 168 152 172 128 162Z" class="leafy"/><path pathLength="1" d="M104 112 C 80 108 60 92 54 70 C 78 72 98 88 104 112Z" class="leafy"/><path pathLength="1" d="M84 82 C 102 64 124 56 146 60 C 132 80 108 88 84 82Z" class="leafy"/><path pathLength="1" d="M50 40 C 34 34 24 22 22 6 C 38 10 48 22 50 40Z" class="leafy"/></svg>`;
+const TREE = `<svg class="bot draw tree" viewBox="0 0 400 460" aria-hidden="true">
+  <path pathLength="1" d="M200 450 C 198 380 202 330 200 260"/>
+  <path pathLength="1" d="M200 300 C 170 280 140 270 104 236"/><path pathLength="1" d="M200 280 C 236 262 262 240 296 206"/>
+  <path pathLength="1" d="M200 262 C 196 220 180 180 150 140"/><path pathLength="1" d="M200 250 C 214 210 236 170 262 128"/>
+  <path pathLength="1" d="M150 140 C 140 110 130 90 112 70"/><path pathLength="1" d="M262 128 C 276 104 296 88 318 80"/>
+  <path pathLength="1" d="M104 236 C 86 230 70 220 58 204"/><path pathLength="1" d="M200 210 C 200 170 204 120 208 70"/>
+  <ellipse pathLength="1" cx="104" cy="226" rx="16" ry="9" transform="rotate(-30 104 226)" class="leafy"/><ellipse pathLength="1" cx="296" cy="200" rx="16" ry="9" transform="rotate(35 296 200)" class="leafy"/>
+  <ellipse pathLength="1" cx="112" cy="66" rx="15" ry="8" transform="rotate(-50 112 66)" class="leafy"/><ellipse pathLength="1" cx="320" cy="78" rx="15" ry="8" transform="rotate(-15 320 78)" class="leafy"/>
+  <ellipse pathLength="1" cx="208" cy="62" rx="14" ry="8" transform="rotate(-80 208 62)" class="leafy"/><ellipse pathLength="1" cx="58" cy="200" rx="14" ry="8" transform="rotate(-40 58 200)" class="leafy"/>
+  <ellipse pathLength="1" cx="150" cy="132" rx="14" ry="8" transform="rotate(-60 150 132)" class="leafy"/><ellipse pathLength="1" cx="262" cy="120" rx="14" ry="8" transform="rotate(50 262 120)" class="leafy"/>
+  <path pathLength="1" d="M120 452 C 160 444 240 444 280 452"/>
+</svg>`;
+const PAVING = `<svg class="paving" viewBox="0 0 400 300" preserveAspectRatio="none" aria-hidden="true"><rect pathLength="1" x="24" y="24" width="352" height="252" rx="4"/><line pathLength="1" x1="24" y1="108" x2="376" y2="108"/><line pathLength="1" x1="24" y1="192" x2="376" y2="192"/><line pathLength="1" x1="141" y1="24" x2="141" y2="108"/><line pathLength="1" x1="258" y1="24" x2="258" y2="108"/><line pathLength="1" x1="82" y1="108" x2="82" y2="192"/><line pathLength="1" x1="200" y1="108" x2="200" y2="192"/><line pathLength="1" x1="318" y1="108" x2="318" y2="192"/><line pathLength="1" x1="141" y1="192" x2="141" y2="276"/><line pathLength="1" x1="258" y1="192" x2="258" y2="276"/></svg>`;
+const LEAFOV = `<svg class="ov" viewBox="0 0 200 200" aria-hidden="true"><path pathLength="1" d="M20 190 C 70 150 120 100 180 10"/><path pathLength="1" d="M70 150 C 40 140 26 116 28 92 C 54 100 70 120 70 150Z"/><path pathLength="1" d="M110 104 C 116 76 138 58 164 56 C 160 82 138 100 110 104Z"/><path pathLength="1" d="M138 62 C 120 46 114 24 122 4 C 140 18 146 40 138 62Z"/></svg>`;
+const ARCHOV = `<svg class="ov" viewBox="0 0 200 200" aria-hidden="true"><rect pathLength="1" x="30" y="20" width="140" height="170"/><line pathLength="1" x1="100" y1="20" x2="100" y2="190"/><line pathLength="1" x1="30" y1="105" x2="170" y2="105"/><path pathLength="1" d="M50 190 V 70 A 50 50 0 0 1 150 70 V 190"/></svg>`;
+const LINES = `<svg class="lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><rect pathLength="1" x="0.5" y="0.5" width="99" height="99"/><line pathLength="1" x1="62" y1="0" x2="62" y2="100"/><line pathLength="1" x1="0" y1="70" x2="62" y2="70"/></svg>`;
+
+/* ---------- helpers ---------- */
+const $ = (s, r=document) => r.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const svcBy = (s) => SVC.find(x => x.s === s);
+let preselect = null;
+const dn = (t) => `<span class="dn">${t}</span>`;
+const crumbs = (items) => `<nav class="crumbs rise" aria-label="Breadcrumb"><a href="#home">Home</a>${items.map(i => `<span aria-hidden="true">/</span>${i[1] ? `<a href="#${i[1]}">${i[0]}</a>` : `<span aria-current="page">${i[0]}</span>`}`).join('')}</nav>`;
+const ctaBand = (h, sub) => `<div class="cta-band"><div class="wrap"><div style="display:grid;gap:14px"><h2 class="sr">${h}</h2><p class="lede">${sub}</p></div><div class="btns"><a class="btn btn-p" href="#get-a-free-estimate">Get a Free Estimate ${ARROW}</a></div></div></div>`;
+
+/* ---------- views ---------- */
+function home(){
+  const tiles = [
+    ['t1','stonework','Stonework & Interlocking','Patios, driveways, walkways, steps and walls built on a proper base.','service-interlocking-patio','fire-pit-patio', true],
+    ['t2','pools','Pools & Poolside Living','Surrounds, coping and seasonal pool care.','pool-services','pool-aerial'],
+    ['t3','wood','Decks & Wood Structures','Decks, pergolas, gazebos, cabanas and fences.','service-deck-construction','pergola'],
+    ['t4','fire','Outdoor Kitchens & Fire','Built-in kitchens, bars, fire pits and fire tables.','service-outdoor-kitchen','outdoor-kitchen-pavilion'],
+    ['t5','design','Landscape Design','A plan for the whole yard before the first stone is laid.','service-landscape-design-consultation','lakeside-patio'],
+    ['t6','care','Repairs & Maintenance','Interlock, stone and brick repair; deck and fence care.','outdoor-services','paver-detail', true],
+    ['t7','int','Interior Design','Interiors shaped around the way you live.','interior-services','int-living-wood']
+  ];
+  return `
+  <section class="hero" id="heroSec">
+    <div class="wrap">
+      <div class="hero-copy">
+        <span class="eyebrow">Landscapes &amp; interiors · Vaughan, Ontario</span>
+        <h1><span class="l1"><span class="w">Beautiful</span> <span class="w">Spaces.</span></span><span class="l2"><span class="w">Inside</span> <span class="w">&amp;</span> <span class="w">Out.</span></span></h1>
+        <p class="lede">Thoughtfully crafted landscapes and interiors that transform the way you live.</p>
+        <div class="btns"><a class="btn btn-p" href="#portfolio">Explore Our Work ${ARROW}</a><a class="btn btn-s" href="#get-a-free-estimate">Get a Free Estimate</a></div>
+        <div class="hero-meta"><div><b>Vaughan &amp; GTA</b>Service area</div><div><b>10+ years</b>Design and build ${dn('verify')}</div><div><b>Free</b>On-site estimates</div></div>
+        <a class="scroll-cue" href="#worlds"><span></span>Scroll</a>
+      </div>
+      <div class="hero-art">
+        <div class="arch" id="heroArch">${img('hero','Stone pool terrace with lounge chairs, planters and a lawn beyond','eager fetchpriority="high"')}</div>
+        <div class="branch">${BRANCH}</div>
+        <span class="chip"><i></i>Poolside terrace</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="worlds" id="worlds">
+    <div class="wrap">
+      <div class="sec-head"><span class="eyebrow">Choose your space</span><h2 class="sr">Two worlds. <em>One beautiful home.</em></h2><p class="lede">Whether you're reimagining your backyard or refreshing your interiors, discover what's possible.</p></div>
+      <div class="panels">
+        <a class="panel" href="#outdoor-services">${img('pool-pavilion-dining','Pool with a covered outdoor dining pavilion')}${LEAFOV}
+          <div class="panel-body"><span class="tag">Outdoor</span><h3>Outdoor Living</h3><p>Landscapes designed for living beautifully.</p><span class="go"><b>${ARROW}</b>Explore Outdoor Services</span></div></a>
+        <a class="panel" href="#interior-services">${img('int-living-warm','Warm modern living room with wood and greenery')}${ARCHOV}
+          <div class="panel-body"><span class="tag">Indoor</span><h3>Indoor Living</h3><p>Interiors shaped around the way you live.</p><span class="go"><b>${ARROW}</b>Explore Interior Services</span></div></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="svc">
+    <div class="wrap">
+      <div class="sec-head split"><div style="display:grid;gap:18px"><span class="eyebrow">What we do</span><h2 class="sr">Every detail. <em>Beautifully considered.</em></h2></div><p class="lede">From the stone underfoot to the shade overhead, each part of the project is planned to work with the rest.</p></div>
+      <div class="mosaic">${tiles.map(t => `<a class="tile ${t[0]} sr" href="#${t[4]}">${img(t[5], t[2])}${t[6] ? PAVING : ''}<span class="arr">${ARROW}</span><div class="tb"><h3>${t[2]}</h3><p>${t[3]}</p></div></a>`).join('')}</div>
+    </div>
+  </section>
+
+  <section class="approach" style="background:var(--off)">
+    <div class="wrap">
+      ${TREE}
+      <div style="display:grid;gap:18px">
+        <span class="eyebrow">Our approach</span>
+        <h2 class="sr">Built to grow <em>with your home.</em></h2>
+        <p class="lede">A landscape should feel like it has always belonged. We start with how you live, then choose materials and methods that hold up to Ontario seasons.</p>
+        <div class="pillars">
+          <div class="pillar"><h3>Craftsmanship</h3><p>Premium materials and proven construction methods, so every stone, wood and concrete detail is built to last.</p></div>
+          <div class="pillar"><h3>Custom design</h3><p>We work closely with you to design spaces that match your vision, your lifestyle and the character of your home.</p></div>
+          <div class="pillar"><h3>Free estimate</h3><p>Tell us about your project and we will arrange a consultation and estimate at no cost.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reels">
+    <div class="wrap">
+      <div class="sec-head split"><div style="display:grid;gap:18px"><span class="eyebrow">On Instagram</span><h2 class="sr">See our work <em>come to life.</em></h2></div><p class="lede">Real spaces. Real transformations. Follow our latest projects and behind-the-scenes work. ${dn('Cover frames and captions pending')}</p></div>
+      <div class="reel-row">${REELS.map((r,k) => `<a class="reel" href="${r.url}" target="_blank" rel="noopener" aria-label="${r.title} ${k+1}, opens Instagram">${img(r.poster,'')}<div class="top"><span>${IGICON}@unicorn_landscaping</span><span>0${k+1}</span></div><span class="play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l12-7.5z"/></svg></span><div class="cap"><b>${r.title} 0${k+1}</b><small>${r.caption}</small></div></a>`).join('')}</div>
+      <div class="reels-foot"><a class="btn btn-p ig-btn" href="${IG}" target="_blank" rel="noopener">${IGICON} Follow Us on Instagram</a></div>
+    </div>
+  </section>
+
+  ${trust()}
+  ${locSec()}
+  `;
+}
+function trust(){
+  return `<section class="trust"><div class="wrap">
+    <div style="display:grid;gap:18px"><span class="eyebrow">Reviews</span><h2 class="sr">What homeowners <em>say.</em></h2><p class="lede">We only show reviews we can link back to their source.</p></div>
+    <div class="trust-card">
+      <div class="stars" aria-hidden="true">${'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.5L12 17.3 6.1 20.5l1.3-6.5L2.5 9.4l6.6-.8z"/></svg>'.repeat(5)}</div>
+      <h3>Google reviews will appear here</h3>
+      <p style="color:var(--muted)">Once the Google Business Profile is connected, verified reviews with ratings and links to the originals load into this space.</p>
+      ${dn('Existing testimonials could not be verified and were not migrated')}
+      <a class="btn btn-s" style="justify-self:start" href="https://www.google.com/maps/search/?api=1&query=Unicorn+Landscaping+81+Vedette+Wy+Vaughan" target="_blank" rel="noopener">Find us on Google ${ARROW}</a>
+    </div>
+  </div></section>`;
+}
+function locSec(){
+  return `<section class="loc"><div class="wrap">
+    <div style="display:grid;gap:18px">
+      <span class="eyebrow">Visit or call</span>
+      <h2 class="sr">Find us <em>in Vaughan.</em></h2>
+      <p class="lede">Serving homeowners in Vaughan and across the Greater Toronto Area.</p>
+      <dl class="loc-list">
+        <div><dt>Address</dt><dd>81 Vedette Wy, Vaughan, ON L4H 4K3</dd></div>
+        <div><dt>Phone</dt><dd>+1 647-904-0668</dd></div>
+        <div><dt>Email</dt><dd>info@unicornlandscaping.ca</dd></div>
+      </dl>
+      <div class="btns" style="margin-top:8px"><a class="btn btn-p" href="https://www.google.com/maps/dir/?api=1&destination=81+Vedette+Wy+Vaughan+ON+L4H+4K3" target="_blank" rel="noopener">Get Directions ${ARROW}</a><a class="btn btn-s" href="https://www.google.com/maps/search/?api=1&query=81+Vedette+Wy+Vaughan+ON+L4H+4K3" target="_blank" rel="noopener">Open in Google Maps</a></div>
+      ${dn('Live Google Maps embed runs in the production build')}
+    </div>
+    <a class="mapcard" href="https://www.google.com/maps/search/?api=1&query=81+Vedette+Wy+Vaughan+ON+L4H+4K3" target="_blank" rel="noopener" aria-label="Open 81 Vedette Wy, Vaughan in Google Maps">
+      <svg viewBox="0 0 600 600" aria-hidden="true">
+        <rect width="600" height="600" fill="#f3f6ef"/>
+        <g fill="#e3ecdf"><rect x="40" y="60" width="150" height="120" rx="10"/><rect x="380" y="380" width="180" height="140" rx="10"/><rect x="60" y="400" width="130" height="150" rx="10"/></g>
+        <g fill="none" stroke="#ffffff" stroke-width="22" stroke-linecap="round"><path d="M-20 250 C 150 240 300 280 620 230"/><path d="M300 -20 C 290 150 330 380 300 620"/></g>
+        <g fill="none" stroke="#ffffff" stroke-width="10" stroke-linecap="round"><path d="M-20 420 C 120 410 220 360 312 330"/><path d="M200 -20 C 210 100 230 200 250 260"/><path d="M330 300 C 420 320 520 330 620 360"/><path d="M420 -20 C 410 80 380 170 330 245"/></g>
+        <g fill="none" stroke="#d3dfd0" stroke-width="1"><path d="M-20 250 C 150 240 300 280 620 230"/><path d="M300 -20 C 290 150 330 380 300 620"/></g>
+        <text x="40" y="236" font-family="Manrope, sans-serif" font-size="13" fill="#5b6b60" letter-spacing="2">MAJOR MACKENZIE DR</text>
+        <text x="322" y="560" font-family="Manrope, sans-serif" font-size="13" fill="#5b6b60" letter-spacing="2" transform="rotate(-88 322 560)">WESTON RD</text>
+      </svg>
+      <span class="pin"><b>Unicorn Landscaping</b><i></i></span>
+      <span class="attr">Illustrative map · tap to open Google Maps</span>
+    </a>
+  </div></section>`;
+}
+function outdoor(){
+  const order = ['design','stonework','wood','pools','fire','care'];
+  return `
+  <section class="phero"><div class="wrap">
+    <div class="copy">${crumbs([['Outdoor Living']])}<span class="eyebrow rise">Outdoor services</span><h1 class="rise">Your outdoors, <em>reimagined.</em></h1><p class="lede rise">Interlocking, natural stone, decks, outdoor kitchens and pool surrounds, designed together so the whole yard works as one.</p><div class="btns rise"><a class="btn btn-p" href="#get-a-free-estimate">Get a Free Estimate ${ARROW}</a></div></div>
+    <div class="img rise">${img('fire-pit-patio','Sunken stone fire pit patio with seating','eager')}</div>
+  </div></section>
+  <section style="padding-top:20px"><div class="wrap"><div class="cats">
+  ${order.map((k,ix) => { const c = CATS[k]; const list = k === 'pools' ? POOL.map(p => `<li><a href="#pool-services">${p.n}${ARROW}</a></li>`).join('') : SVC.filter(s => s.c === k).map(s => `<li><a href="#service-${s.s}">${s.n}${ARROW}</a></li>`).join('');
+    return `<article class="cat" id="cat-${k}"><a class="cat-card sr" href="${k==='pools' ? '#pool-services' : '#service-' + SVC.find(s => s.c === k).s}">${img(c.img, c.name)}${k==='stonework' ? PAVING : ''}</a>
+    <div class="cat-body"><span class="num">${ix+1} of 6</span><h2 class="sr">${c.name}</h2><p class="lede">${c.blurb}</p>${k==='design' ? dn('Design service wording to confirm') : ''}<ul class="svc-list">${list}</ul><div class="btns" style="margin-top:6px"><a class="btn btn-s" href="#get-a-free-estimate" data-pre="${k}">Request an estimate ${ARROW}</a></div></div></article>`; }).join('')}
+  </div></div></section>
+  ${ctaBand('Start with a <em>conversation.</em>','Tell us about your yard and what you would like it to become.')}`;
+}
+function service(slug){
+  const s = svcBy(slug); if (!s) return notFound();
+  const c = CATS[s.c];
+  const related = SVC.filter(x => x.c === s.c && x.s !== s.s);
+  const covers = {
+    design:['Site visit to understand grade, sun, drainage and access','Layout options for patios, paths, planting and structures','Material suggestions and a phased plan if needed'],
+    stonework:['Excavation and a compacted granular base sized for the use','Pavers, slabs or natural stone set to proper slope for drainage','Edge restraint, joint sand and a clean finish at handover'],
+    wood:['Design matched to your house and yard','Footings and framing sized for the structure','Finishing, hardware and trim details'],
+    fire:['Layout planned around how you cook and gather','Stone or block construction with durable surfaces','Coordination of utilities where required'],
+    care:['On-site assessment of the condition and cause','A clear scope before work starts','Repair or refinishing to blend with what is there']
+  }[s.c];
+  return `
+  <section class="phero"><div class="wrap">
+    <div class="copy">${crumbs([['Outdoor Living','outdoor-services'],[s.n]])}<span class="eyebrow rise">${c.name}</span><h1 class="rise" style="font-size:clamp(2.3rem,5vw,4.2rem)">${s.n}</h1><p class="lede rise">${s.d}</p><div class="btns rise"><a class="btn btn-p" href="#get-a-free-estimate" data-svc="${s.s}">Get a Free Estimate ${ARROW}</a><a class="btn btn-s" href="#outdoor-services">All outdoor services</a></div></div>
+    <div class="img rise">${img(s.i, s.n,'eager')}</div>
+  </div></section>
+  <section class="sd" style="padding-top:20px"><div class="wrap">
+    <div class="prose">
+      <h2>What's included</h2>
+      <ul class="ticks">${covers.map(x => `<li>${x}</li>`).join('')}</ul>
+      ${dn('Service copy rewritten for clarity; confirm scope with Unicorn')}
+      <h2>How a project runs</h2>
+      <div class="steps"><div><b>Consult</b>We visit, listen and look at the site.</div><div><b>Design</b>A plan and a clear written estimate.</div><div><b>Build</b>Careful work, a tidy site and regular updates.</div><div><b>Walkthrough</b>We review the finished space together.</div></div>
+      <h2>Serving Vaughan and the GTA</h2>
+      <p style="color:var(--muted)">Unicorn Landscaping is based at 81 Vedette Wy in Vaughan. Request a free estimate and we will arrange a time to see your property.</p>
+    </div>
+    <aside class="aside"><h3>More in ${c.short.toLowerCase()}</h3><ul>${related.map(r => `<li><a href="#service-${r.s}">${r.n}</a></li>`).join('') || '<li><a href="#outdoor-services">All outdoor services</a></li>'}</ul><a class="btn btn-p" href="#get-a-free-estimate" data-svc="${s.s}">Request this service ${ARROW}</a><p style="font-size:.85rem;color:var(--muted)">Or call <b style="color:var(--forest);user-select:all">+1 647-904-0668</b></p></aside>
+  </div></section>`;
+}
+function interior(){
+  return `
+  <section class="phero wide"><div class="wrap" style="gap:36px">
+    <div class="copy" style="max-width:820px">${crumbs([['Indoor Living']])}<span class="eyebrow rise">Interior services</span><h1 class="rise">Beauty begins <em>at home.</em></h1><p class="lede rise">Calm, natural interiors with warm wood, soft light and a little green, planned with the same care we bring to every landscape.</p><div class="btns rise"><a class="btn btn-p" href="#get-a-free-estimate" data-pre="indoor">Book a Consultation ${ARROW}</a></div></div>
+    <div class="img rise">${img('int-living-warm','Warm modern living room with wood accents and plants','eager')}</div>
+    <p style="font-size:.82rem;color:var(--muted)">Editorial inspiration imagery. Not a completed Unicorn project.</p>
+  </div></section>
+  <section style="padding-top:20px"><div class="wrap">
+    <div class="sec-head split"><div style="display:grid;gap:18px"><span class="eyebrow">Services</span><h2 class="sr">Interiors shaped <em>around you.</em></h2></div><div style="display:grid;gap:12px"><p class="lede">The interior offering is being finalised. Each category below is editable and will only be published once confirmed.</p>${dn('All six categories await confirmation from Chan')}</div></div>
+    <div class="int-grid">${INTERIOR.map(x => `<article class="int-card sr"><div class="ph">${img(x.i, x.n)}${LINES}</div><h3>${x.n}</h3><p>${x.d}</p>${dn('Unconfirmed')}</article>`).join('')}</div>
+  </div></section>
+  <section style="background:var(--mist)"><div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Process</span><h2 class="sr">From first idea <em>to finished room.</em></h2></div>
+    <div class="process"><div><b>01</b><h3>Listen</h3><p>We talk about how you use the space and what is not working today.</p></div><div><b>02</b><h3>Plan</h3><p>Layout, materials and a budget range agreed before any work begins.</p></div><div><b>03</b><h3>Select</h3><p>Finishes, fixtures and colours chosen together, with samples in hand.</p></div><div><b>04</b><h3>Deliver</h3><p>The work is completed and the space is reviewed with you.</p></div></div>
+    <p style="margin-top:18px">${dn('Process copy to confirm')}</p>
+  </div></section>
+  <section><div class="wrap">
+    <div class="sec-head split"><div style="display:grid;gap:18px"><span class="eyebrow">Inspiration</span><h2 class="sr">Natural, warm, <em>lived in.</em></h2></div><p class="lede">A mood board for the direction we love. These are inspiration images, not Unicorn projects. Completed interior work will be added here once photographed.</p></div>
+    <div class="insp">${['int-living-plants','int-kitchen-island','int-bath','int-sage','int-loft','int-kitchen','int-bath-glass'].map(n => img(n,'Interior inspiration')).join('')}</div>
+  </div></section>
+  ${ctaBand('Let\'s talk about <em>your space.</em>','Book an interior consultation, or call us on +1 647-904-0668.')}`;
+}
+function pool(){
+  return `
+  <section class="phero"><div class="wrap">
+    <div class="copy">${crumbs([['Pool Services']])}<span class="eyebrow rise">Pools &amp; poolside</span><h1 class="rise">Your own <em>backyard escape.</em></h1><p class="lede rise">Pool renovations, seasonal opening and closing, equipment and maintenance, alongside the stone and landscaping that surround the water.</p><div class="btns rise"><a class="btn btn-p" href="#get-a-free-estimate" data-pre="pools">Request a Pool Estimate ${ARROW}</a></div></div>
+    <div class="img rise">${img('pool-aerial','Aerial view of a rectangular pool with stone surround and garden','eager')}</div>
+  </div></section>
+  <section style="padding-top:20px"><div class="wrap" style="display:grid;gap:36px">
+    <div class="notice"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.5"/></svg><div style="display:grid;gap:8px"><p><b>Pool care is provided through Ontario Pool Service.</b> Each service below links to their page with full details. For pool surrounds, coping and poolside landscaping, request an estimate from Unicorn directly.</p>${dn('Confirm the relationship and preferred enquiry route with Chan')}</div></div>
+    <div class="pool-grid">${POOL.map(p => `<article class="pool-item sr"><h3>${p.n}</h3><p>${p.d}</p><a href="${p.u}" target="_blank" rel="noopener">Details on Ontario Pool Service ${ARROW}</a></article>`).join('')}</div>
+  </div></section>
+  <section style="background:var(--off)"><div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Poolside living</span><h2 class="sr">The space <em>around the water.</em></h2><p class="lede">Flagstone coping, interlocking pool decks, cabanas and fire features that make the pool the centre of the yard.</p></div>
+    <div class="insp">${img('pool-pavilion-dining','Pool with dining pavilion')}${img('pool-coping','Flagstone pool coping')}${img('pool-evening','Pool and spa at dusk')}${img('pool-patio','Patio beside a pool')}${img('pool-edge','Paver pool edge')}${img('pool-cabana','Poolside gazebo')}${img('pool-house','Pool with pergola and deck')}</div>
+    <p style="margin-top:14px">${dn('Placeholder imagery from the current site, not verified as Unicorn work')}</p>
+  </div></section>
+  ${ctaBand('Plan your <em>poolside.</em>','Coping, decks, cabanas and landscaping, designed around your pool.')}`;
+}
+function portfolio(){
+  return `
+  <section class="phero wide" style="padding-bottom:20px"><div class="wrap" style="gap:24px">
+    <div class="copy" style="max-width:820px">${crumbs([['Our Work']])}<span class="eyebrow rise">Portfolio</span><h1 class="rise">Spaces we've <em>brought to life.</em></h1><p class="lede rise">Patios, pools, stonework and outdoor rooms. Tap any image to view it larger.</p></div>
+    ${dn('Gallery uses placeholder imagery from the current website. Replace with approved Unicorn project photos, titles and locations before launch.')}
+  </div></section>
+  <section style="padding-top:28px"><div class="wrap">
+    <div class="filters" role="group" aria-label="Filter projects">
+      <button type="button" data-f="all" aria-pressed="true">All Projects</button>${Object.entries(PFCAT).map(([k,v]) => `<button type="button" data-f="${k}" aria-pressed="false">${v}</button>`).join('')}<button type="button" disabled title="Available once interior project photos are supplied">Interiors (coming soon)</button>
+    </div>
+    <div class="masonry" id="pfGrid">${PF.map((p,k) => `<button type="button" class="pf" data-k="${k}" data-c="${p.c}" aria-label="View ${p.t}"><figure style="margin:0">${img(p.i,p.t)}<figcaption><small>${PFCAT[p.c]}</small><b>${p.t}</b></figcaption></figure></button>`).join('')}</div>
+  </div></section>
+  ${ctaBand('Your project <em>could be next.</em>','Tell us about the space you have in mind.')}`;
+}
+function about(){
+  return `
+  <section class="phero"><div class="wrap">
+    <div class="copy">${crumbs([['About']])}<span class="eyebrow rise">About Unicorn</span><h1 class="rise">Rooted in quality. <em>Inspired by home.</em></h1><p class="lede rise">Unicorn Landscaping Inc. designs and builds landscaping, interlocking and outdoor living spaces in Vaughan and across the Greater Toronto Area.</p></div>
+    <div class="img rise">${img('night-terrace','Lit stone terrace with water feature at dusk','eager')}</div>
+  </div></section>
+  <section class="story" style="padding-top:20px"><div class="wrap">
+    <div style="display:grid;gap:20px">
+      <span class="eyebrow">Our story</span>
+      <h2 class="sr">A single craft, <em>done well.</em></h2>
+      <p class="lede">We are dedicated to turning the forgotten corners of a property into places people want to be. A good landscape is somewhere life's best moments happen.</p>
+      <p style="color:var(--muted)">Our mission is simple: deliver durable, functional and visually outstanding outdoor spaces that add long-term value to your property. We bring hands-on experience in interlocking driveways, patios, walkways, retaining walls, natural stone and outdoor living construction to every project, with precision, reliability and care.</p>
+      <p style="color:var(--muted)">Now we are bringing the same eye inside, with interior design for homeowners who want their rooms to feel as calm and considered as their gardens.</p>
+      ${dn('Team introduction and photos to add once Chan approves them')}
+    </div>
+    <div class="pair">${img('lakeside-patio','Waterside patio with planting')}${img('fire-table','Fire table detail')}</div>
+  </div></section>
+  <section style="background:var(--off)"><div class="wrap" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.7fr);gap:clamp(28px,5vw,80px);align-items:center">
+    <div style="display:grid;gap:28px">
+      <div class="sec-head" style="margin:0"><span class="eyebrow">What guides us</span><h2 class="sr">Craft, care <em>and clarity.</em></h2></div>
+      <div class="values">
+        <div><h3>Craftsmanship</h3><p>Premium materials and proven methods, so every detail is built to last.</p></div>
+        <div><h3>Attention to detail</h3><p>Levels, joints, edges and drainage are where good work shows over time.</p></div>
+        <div><h3>Client-centred</h3><p>Your vision, lifestyle and home lead the design. We guide, you decide.</p></div>
+      </div>
+    </div>
+    ${TREE}
+  </div></section>
+  ${locSec()}`;
+}
+function estimate(){
+  const outdoorOpts = Object.entries(CATS).filter(([k]) => k !== 'pools').map(([k,c]) => `<optgroup label="${c.name}">${SVC.filter(s => s.c === k).map(s => `<option value="${s.s}">${s.n}</option>`).join('')}</optgroup>`).join('') + `<optgroup label="Pools">${POOL.map(p => `<option value="pool-${p.n.toLowerCase().replace(/[^a-z]+/g,'-')}">${p.n}</option>`).join('')}<option value="poolside-landscaping">Poolside landscaping &amp; coping</option></optgroup><option value="other">Something else</option>`;
+  const indoorOpts = INTERIOR.map(x => `<option value="int-${x.n.toLowerCase().replace(/[^a-z]+/g,'-')}">${x.n}</option>`).join('') + '<option value="other">Something else</option>';
+  return `
+  <section class="phero wide" style="padding-bottom:28px"><div class="wrap"><div class="copy" style="max-width:860px">${crumbs([['Get a Free Estimate']])}<span class="eyebrow rise">Free estimate</span><h1 class="rise">Let's bring your <em>vision to life.</em></h1><p class="lede rise">Tell us about your space, and let's start planning something beautiful.</p></div></div></section>
+  <section class="est" style="padding-top:20px"><div class="wrap">
+    <aside class="est-side">
+      <div class="img">${img('outdoor-fireplace','Patio with an outdoor fireplace and lounge chairs')}</div>
+      <ol class="est-steps"><li><span><b>Share the details.</b> A few lines and a photo or two help us understand the project.</span></li><li><span><b>We get in touch.</b> We call or email to talk it through and arrange a visit.</span></li><li><span><b>Site visit and estimate.</b> We see the space and prepare a clear estimate, free of charge.</span></li></ol>
+      <dl class="loc-list" style="margin-top:0"><div><dt>Phone</dt><dd>+1 647-904-0668</dd></div><div><dt>Email</dt><dd>info@unicornlandscaping.ca</dd></div><div><dt>Office</dt><dd>81 Vedette Wy, Vaughan, ON L4H 4K3</dd></div></dl>
+    </aside>
+    <form class="form" id="estForm" novalidate>
+      <div class="row2"><div class="fld"><label for="f-name">Full name</label><input id="f-name" name="name" autocomplete="name" required><span class="err" id="e-name"></span></div>
+      <div class="fld"><label for="f-email">Email address</label><input id="f-email" name="email" type="email" autocomplete="email" required><span class="err" id="e-email"></span></div></div>
+      <div class="row2"><div class="fld"><label for="f-phone">Phone number</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required placeholder="647 555 0123"><span class="err" id="e-phone"></span></div>
+      <div class="fld"><label for="f-addr">Property address or location</label><input id="f-addr" name="address" autocomplete="street-address" required placeholder="Street, city"><span class="err" id="e-addr"></span></div></div>
+      <fieldset class="fld"><legend>Is this an indoor or outdoor project?</legend>
+        <div class="seg"><label><input type="radio" name="kind" value="outdoor" id="k-out" checked><span>Outdoor</span><small>Landscaping, stone, decks, pools</small></label><label><input type="radio" name="kind" value="indoor" id="k-in"><span>Indoor</span><small>Interior design</small></label></div>
+      </fieldset>
+      <div class="fld"><label for="f-svc">Service type</label><select id="f-svc" name="service" required data-out="${esc(outdoorOpts)}" data-in="${esc(indoorOpts)}"></select><span class="err" id="e-svc"></span><span id="svcNote" hidden>${dn('Indoor options await confirmation')}</span></div>
+      <div class="row2"><div class="fld"><label for="f-budget">Approximate budget <span class="opt">(optional)</span></label><select id="f-budget" name="budget"><option value="">Prefer not to say</option><option>Under $10,000</option><option>$10,000 to $25,000</option><option>$25,000 to $50,000</option><option>$50,000 to $100,000</option><option>Over $100,000</option></select></div>
+      <div class="fld"><label for="f-time">Desired timeline <span class="opt">(optional)</span></label><select id="f-time" name="timeline"><option value="">Not sure yet</option><option>As soon as possible</option><option>Within 3 months</option><option>3 to 6 months</option><option>Next season</option></select></div></div>
+      <div class="fld"><label for="f-desc">Tell us about the project</label><textarea id="f-desc" name="description" required placeholder="What would you like to build or change? Approximate size, materials you like, anything we should know."></textarea><span class="err" id="e-desc"></span></div>
+      <div class="fld"><span style="font:600 .82rem/1.2 var(--body);color:var(--forest)">Photos <span class="opt" style="font-weight:500;color:var(--muted)">(optional, up to 5 images, 10 MB each)</span></span>
+        <label class="drop" for="f-files"><input id="f-files" name="photos" type="file" accept="image/jpeg,image/png,image/webp,image/heic,image/heif" multiple><b style="color:var(--forest)">Add photos of your space</b><span>JPG, PNG, WEBP or HEIC</span></label>
+        <ul class="files" id="fileList"></ul><span class="err" id="e-files"></span></div>
+      <div class="hp" aria-hidden="true"><label for="f-web">Website</label><input id="f-web" name="website" tabindex="-1" autocomplete="off"></div>
+      <label class="check" for="f-consent"><input type="checkbox" id="f-consent" name="consent" required><span>I agree to Unicorn Landscaping contacting me about this enquiry by phone or email.</span></label><span class="err" id="e-consent"></span>
+      <div class="submit-row"><button class="btn btn-p" type="submit" id="estSubmit">Request My Free Estimate ${ARROW}</button><span style="font-size:.85rem;color:var(--muted)">We'll only use your details to respond to this enquiry.</span></div>
+      <div id="estResult" aria-live="polite"></div>
+    </form>
+  </div></section>`;
+}
+function contact(){
+  return `
+  <section class="phero wide" style="padding-bottom:28px"><div class="wrap"><div class="copy" style="max-width:860px">${crumbs([['Contact']])}<span class="eyebrow rise">Contact</span><h1 class="rise">Let's talk about <em>your space.</em></h1><p class="lede rise">Call, email or send an estimate request. We're based in Vaughan and work across the GTA.</p></div></div></section>
+  <section style="padding-top:20px;padding-bottom:40px"><div class="wrap"><div class="contact-cards">
+    <div class="ccard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg><span class="eyebrow">Phone</span><span class="v">+1 647-904-0668</span><div class="small"><a class="linkbtn" href="tel:+16479040668">Call</a><button class="linkbtn" type="button" data-copy="+1 647-904-0668">Copy</button></div></div>
+    <div class="ccard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span class="eyebrow">Email</span><span class="v">info@unicornlandscaping.ca</span><div class="small"><button class="linkbtn" type="button" data-copy="info@unicornlandscaping.ca">Copy address</button></div></div>
+    <div class="ccard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span class="eyebrow">Office</span><span class="v">81 Vedette Wy, Vaughan, ON L4H 4K3</span><div class="small"><a class="linkbtn" href="https://www.google.com/maps/dir/?api=1&destination=81+Vedette+Wy+Vaughan+ON+L4H+4K3" target="_blank" rel="noopener">Directions</a></div></div>
+  </div></div></section>
+  ${locSec()}
+  ${ctaBand('Prefer to send <em>the details?</em>','Our estimate form takes about two minutes.')}`;
+}
+function notFound(){ return `<section class="phero wide"><div class="wrap"><div class="copy"><h1>Page not found</h1><p class="lede">That page has moved. Try the outdoor services or get in touch.</p><div class="btns"><a class="btn btn-p" href="#home">Back to home</a></div></div></div></section>`; }
+
+const ROUTES = {
+  'home':[home,'Unicorn Landscaping | Landscaping & Interiors in Vaughan, ON','Landscaping, interlocking, natural stone, decks and outdoor living in Vaughan and the GTA, plus interior design.'],
+  'outdoor-services':[outdoor,'Outdoor Services in Vaughan | Unicorn Landscaping','Interlocking, natural stone, decks, outdoor kitchens, pools and repairs in Vaughan and the GTA.'],
+  'interior-services':[interior,'Interior Design in Vaughan | Unicorn Landscaping','Interior design consultations and planning from Unicorn Landscaping in Vaughan.'],
+  'pool-services':[pool,'Pool Services & Poolside Landscaping | Unicorn Landscaping','Pool renovations, opening, closing, equipment and maintenance, plus poolside landscaping.'],
+  'portfolio':[portfolio,'Our Work | Unicorn Landscaping','Patios, pools, stonework and outdoor rooms.'],
+  'about':[about,'About Unicorn Landscaping Inc. | Vaughan, ON','Landscaping and interlocking specialists in Vaughan and the GTA.'],
+  'get-a-free-estimate':[estimate,'Get a Free Estimate | Unicorn Landscaping','Request a free landscaping or interior estimate in Vaughan and the GTA.'],
+  'contact':[contact,'Contact Unicorn Landscaping | Vaughan, ON','Phone, email and directions to Unicorn Landscaping in Vaughan.']
+};
+
+/* ---------- router ---------- */
+const main = $('#main');
+let current = null, first = true;
+function routeKey(){ const h = (location.hash || '').replace(/^#/, ''); return h || 'home'; }
+function render(key){
+  let view, title, desc;
+  if (key.startsWith('service-')){ const s = svcBy(key.slice(8)); view = () => service(key.slice(8)); title = s ? `${s.n} in Vaughan | Unicorn Landscaping` : 'Not found'; desc = s ? s.d : ''; }
+  else if (ROUTES[key]) [view, title, desc] = ROUTES[key];
+  else if (document.getElementById(key) && current) { return; }
+  else { view = notFound; title = 'Page not found | Unicorn Landscaping'; desc=''; }
+  main.innerHTML = view();
+  document.title = title;
+  const md = document.querySelector('meta[name="description"]'); if (md && desc) md.content = desc;
+  document.querySelectorAll('.nav a[data-r]').forEach(a => a.toggleAttribute('aria-current', a.dataset.r === key || (key.startsWith('service-') && a.dataset.r === 'outdoor-services')));
+  document.querySelectorAll('.nav a[aria-current]').forEach(a => a.setAttribute('aria-current','page'));
+  current = key;
+  main.classList.remove('view-enter'); void main.offsetWidth; main.classList.add('view-enter');
+  bindView(key);
+}
+function navigate(){
+  const key = routeKey();
+  if (key === current) return;
+  if (!ROUTES[key] && !key.startsWith('service-') && document.getElementById(key)) { document.getElementById(key).scrollIntoView(); return; }
+  closeMenu();
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (first || reduce){ first = false; render(key); window.scrollTo(0,0); return; }
+  const w = $('#wipe');
+  w.className = 'wipe in';
+  setTimeout(() => { render(key); window.scrollTo(0,0); main.focus({preventScroll:true}); w.className = 'wipe out'; setTimeout(() => { w.className = 'wipe'; }, 460); }, 400);
+}
+window.addEventListener('hashchange', navigate);
+document.addEventListener('click', (e) => {
+  const a = e.target.closest('a[data-svc],a[data-pre]');
+  if (a) preselect = a.dataset.svc ? {svc:a.dataset.svc} : {pre:a.dataset.pre};
+  const c = e.target.closest('[data-copy]');
+  if (c){ const t = c.dataset.copy; const done = () => { const o = c.textContent; c.textContent = 'Copied'; setTimeout(() => c.textContent = o, 1600); };
+    try { navigator.clipboard.writeText(t).then(done, () => selectText(c.previousElementSibling || c)); } catch(_) { selectText(c); } }
+  const sameHash = e.target.closest('a[href^="#"]');
+  if (sameHash && sameHash.getAttribute('href') === '#' + current && !document.getElementById(current)) { e.preventDefault(); window.scrollTo({top:0,behavior:'smooth'}); closeMenu(); }
+});
+function selectText(el){ try { const r = document.createRange(); r.selectNodeContents(el); const s = getSelection(); s.removeAllRanges(); s.addRange(r); } catch(_){} }
+
+/* ---------- per-view behaviour ---------- */
+function bindView(key){
+  if (key === 'home'){ const h = $('#heroSec'); if (h && introDone) h.classList.add('ready'); parallax(); }
+  if (key === 'portfolio') bindPortfolio();
+  if (key === 'get-a-free-estimate') bindForm();
+}
+function parallax(){
+  const img = $('#heroArch img'); if (!img || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const tick = () => { if (!document.body.contains(img)) { removeEventListener('scroll', on); return; } const y = Math.min(scrollY, 900); img.style.setProperty('--py', (y * -0.12).toFixed(1) + 'px'); };
+  let raf = 0; const on = () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(tick); };
+  addEventListener('scroll', on, {passive:true});
+}
+
+/* portfolio + lightbox */
+let lbList = [], lbIx = 0, lbReturn = null;
+function bindPortfolio(){
+  const grid = $('#pfGrid');
+  document.querySelectorAll('.filters button[data-f]').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('.filters button[data-f]').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+    grid.querySelectorAll('.pf').forEach(p => { p.hidden = !(b.dataset.f === 'all' || p.dataset.c === b.dataset.f); });
+  }));
+  grid.addEventListener('click', (e) => { const p = e.target.closest('.pf'); if (!p) return;
+    lbList = [...grid.querySelectorAll('.pf:not([hidden])')].map(x => +x.dataset.k); lbIx = lbList.indexOf(+p.dataset.k); lbReturn = p; openLb(); });
+}
+function showLb(){ const p = PF[lbList[lbIx]]; $('#lbImg').src = `img/${p.i}.webp`; $('#lbImg').alt = p.t; $('#lbTitle').textContent = p.t; $('#lbCat').textContent = PFCAT[p.c]; $('#lbCount').textContent = `${lbIx+1} / ${lbList.length}`; }
+function openLb(){ showLb(); $('#lb').hidden = false; document.body.style.overflow = 'hidden'; $('#lbClose').focus(); }
+function closeLb(){ $('#lb').hidden = true; document.body.style.overflow = ''; if (lbReturn) lbReturn.focus(); }
+$('#lbClose').addEventListener('click', closeLb);
+$('#lbPrev').addEventListener('click', () => { lbIx = (lbIx - 1 + lbList.length) % lbList.length; showLb(); });
+$('#lbNext').addEventListener('click', () => { lbIx = (lbIx + 1) % lbList.length; showLb(); });
+$('#lb').addEventListener('click', (e) => { if (e.target.id === 'lb' || e.target.classList.contains('lb-stage')) closeLb(); });
+let tx = 0; $('#lb').addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, {passive:true});
+$('#lb').addEventListener('touchend', e => { const d = e.changedTouches[0].clientX - tx; if (Math.abs(d) > 50) (d < 0 ? $('#lbNext') : $('#lbPrev')).click(); });
+document.addEventListener('keydown', (e) => {
+  if (!$('#lb').hidden){ if (e.key === 'Escape') closeLb(); if (e.key === 'ArrowRight') $('#lbNext').click(); if (e.key === 'ArrowLeft') $('#lbPrev').click();
+    if (e.key === 'Tab'){ const f = [...$('#lb').querySelectorAll('button')]; const i = f.indexOf(document.activeElement); if (e.shiftKey && i <= 0){ e.preventDefault(); f[f.length-1].focus(); } else if (!e.shiftKey && i === f.length-1){ e.preventDefault(); f[0].focus(); } } }
+  else if (e.key === 'Escape') { closeMenu(); $('#notesPanel').hidden = true; }
+});
+
+/* estimate form */
+function bindForm(){
+  const f = $('#estForm'), sel = $('#f-svc');
+  const fill = (kind) => { sel.innerHTML = '<option value="">Choose a service</option>' + (kind === 'indoor' ? sel.dataset.in : sel.dataset.out); $('#svcNote').hidden = kind !== 'indoor'; };
+  let kind = 'outdoor';
+  if (preselect){
+    if (preselect.pre === 'indoor') kind = 'indoor';
+    $(kind === 'indoor' ? '#k-in' : '#k-out').checked = true;
+  }
+  fill(kind);
+  if (preselect){
+    if (preselect.svc) sel.value = preselect.svc;
+    else if (preselect.pre === 'pools') sel.value = 'poolside-landscaping';
+    else if (preselect.pre && CATS[preselect.pre]){ const s = SVC.find(x => x.c === preselect.pre); if (s) sel.value = s.s; }
+    preselect = null;
+  }
+  f.querySelectorAll('input[name="kind"]').forEach(r => r.addEventListener('change', () => fill(r.value)));
+  let files = [];
+  const fl = $('#fileList'), fe = $('#e-files');
+  $('#f-files').addEventListener('change', (e) => {
+    fe.textContent = ''; const ok = /^image\/(jpeg|png|webp|heic|heif)$/;
+    for (const file of e.target.files){
+      if (files.length >= 5){ fe.textContent = 'You can add up to 5 photos.'; break; }
+      if (!(ok.test(file.type) || /\.(heic|heif)$/i.test(file.name))){ fe.textContent = `${file.name} is not a supported image type. Use JPG, PNG, WEBP or HEIC.`; continue; }
+      if (file.size > 10 * 1024 * 1024){ fe.textContent = `${file.name} is larger than 10 MB. Try a smaller photo.`; continue; }
+      files.push(file);
+    }
+    e.target.value = ''; drawFiles();
+  });
+  function drawFiles(){ fl.innerHTML = files.map((x,i) => `<li><span>${esc(x.name)} · ${(x.size/1048576).toFixed(1)} MB</span><button type="button" class="linkbtn" data-rm="${i}">Remove</button></li>`).join(''); }
+  fl.addEventListener('click', (e) => { const b = e.target.closest('[data-rm]'); if (b){ files.splice(+b.dataset.rm,1); drawFiles(); } });
+  const rules = [
+    ['f-name','e-name', v => v.trim().length >= 2 || 'Enter your full name.'],
+    ['f-email','e-email', v => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()) || 'Enter an email address like name@example.com.'],
+    ['f-phone','e-phone', v => v.replace(/\D/g,'').length >= 10 || 'Enter a phone number with area code, for example 647 555 0123.'],
+    ['f-addr','e-addr', v => v.trim().length >= 4 || 'Enter the property address or the city where the project is.'],
+    ['f-svc','e-svc', v => !!v || 'Choose the service that fits best, or pick Something else.'],
+    ['f-desc','e-desc', v => v.trim().length >= 15 || 'Add a sentence or two about the project so we can prepare.']
+  ];
+  const check = (r) => { const el = $('#' + r[0]); const res = r[2](el.value); const ok = res === true; $('#' + r[1]).textContent = ok ? '' : res; el.closest('.fld').classList.toggle('bad', !ok); el.setAttribute('aria-invalid', String(!ok)); el.setAttribute('aria-describedby', r[1]); return ok; };
+  rules.forEach(r => $('#' + r[0]).addEventListener('blur', () => { if ($('#' + r[0]).value) check(r); }));
+  f.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let ok = rules.map(check).every(Boolean);
+    const cons = $('#f-consent').checked; $('#e-consent').textContent = cons ? '' : 'Please confirm we can contact you about this enquiry.'; ok = ok && cons;
+    if (!ok){ const bad = f.querySelector('[aria-invalid="true"]') || $('#f-consent'); bad.focus(); return; }
+    if ($('#f-web').value){ $('#estResult').innerHTML = ''; return; } // honeypot
+    const btn = $('#estSubmit'); btn.setAttribute('aria-busy','true'); btn.disabled = true; const label = btn.innerHTML; btn.innerHTML = '<span class="spinner" aria-hidden="true"></span> Sending your request';
+    const fd = new FormData(f); fd.delete('photos'); files.forEach(x => fd.append('photos[]', x)); fd.append('service_label', sel.options[sel.selectedIndex].text);
+    fetch('send.php', {method:'POST', body:fd}).then(r => r.json().catch(() => ({})).then(j => r.ok && j.ok)).catch(() => false).then((sent) => {
+      btn.removeAttribute('aria-busy'); btn.disabled = false; btn.innerHTML = label;
+      if (sent){
+        $('#estResult').innerHTML = `<div class="result" tabindex="-1" id="resBox"><h3>Thank you, your request has been sent</h3><p style="color:var(--muted)">We'll be in touch shortly to talk it through and arrange a visit. If it's urgent, call <b>+1 647-904-0668</b>.</p></div>`;
+        f.reset(); files = []; drawFiles(); fill('outdoor'); $('#resBox').focus(); return;
+      }
+      const kindV = f.querySelector('input[name="kind"]:checked').value;
+      const svcT = sel.options[sel.selectedIndex].text;
+      const txt = [`New estimate request`, ``, `Name: ${$('#f-name').value.trim()}`, `Email: ${$('#f-email').value.trim()}`, `Phone: ${$('#f-phone').value.trim()}`, `Location: ${$('#f-addr').value.trim()}`, `Project: ${kindV === 'indoor' ? 'Indoor' : 'Outdoor'} · ${svcT}`, `Budget: ${$('#f-budget').value || 'Not given'}`, `Timeline: ${$('#f-time').value || 'Not given'}`, `Photos: ${files.length ? files.map(x => x.name).join(', ') : 'None'}`, ``, $('#f-desc').value.trim()].join('\n');
+      $('#estResult').innerHTML = `<div class="result" tabindex="-1" id="resBox"><h3>Your request could not be sent</h3><p style="color:var(--muted)">Something went wrong on our side, so nothing was submitted. To reach the team today, copy the summary below and email it to <code style="user-select:all">info@unicornlandscaping.ca</code>, or call <b style="user-select:all">+1 647-904-0668</b>.</p><pre id="resText">${esc(txt)}</pre><div class="copyline"><button type="button" class="btn btn-s" id="copyRes">Copy summary</button></div></div>`;
+      $('#resBox').focus();
+      $('#copyRes').addEventListener('click', () => { try { navigator.clipboard.writeText(txt).then(() => { $('#copyRes').textContent = 'Copied'; }, () => selectText($('#resText'))); } catch(_) { selectText($('#resText')); } });
+    });
+  });
+}
+
+/* ---------- header, menu, notes ---------- */
+$('#brandLink').innerHTML = logo(''); $('#mBrand').innerHTML = logo(''); $('#fBrand').innerHTML = logo('');
+addEventListener('scroll', () => $('#hdr').classList.toggle('scrolled', scrollY > 10), {passive:true});
+const mnav = $('#mnav'), menuBtn = $('#menuBtn');
+function openMenu(){ mnav.classList.add('open'); menuBtn.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; setTimeout(() => $('#menuClose').focus(), 50); }
+function closeMenu(){ if (!mnav.classList.contains('open')) return; mnav.classList.remove('open'); menuBtn.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+menuBtn.addEventListener('click', openMenu); $('#menuClose').addEventListener('click', () => { closeMenu(); menuBtn.focus(); });
+mnav.addEventListener('click', e => { if (e.target.closest('a')) closeMenu(); });
+$('#notesBtn').addEventListener('click', () => { const p = $('#notesPanel'); p.hidden = !p.hidden; $('#notesBtn').setAttribute('aria-expanded', String(!p.hidden)); });
+$('#hideNotes').addEventListener('click', () => { const h = document.body.classList.toggle('hide-notes'); $('#hideNotes').textContent = h ? 'Show demo tags' : 'Hide demo tags'; try { localStorage.setItem('ul-hide-notes', h ? '1' : ''); } catch(_){} });
+try { if (localStorage.getItem('ul-hide-notes')) { document.body.classList.add('hide-notes'); $('#hideNotes').textContent = 'Show demo tags'; } } catch(_){}
+
+/* ---------- signature intro ---------- */
+let introDone = false;
+function finishIntro(){ introDone = true; const h = $('#heroSec'); if (h) h.classList.add('ready'); }
+function runIntro(){
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let seen = false; try { seen = sessionStorage.getItem('ul-intro') === '1'; } catch(_){}
+  if (reduce || seen || routeKey() !== 'home' || !Element.prototype.animate){ finishIntro(); return; }
+  try { sessionStorage.setItem('ul-intro','1'); } catch(_){}
+  const intro = $('#intro'); intro.hidden = false;
+  const box = $('#introLogo'); box.innerHTML = logo('') + '<div class="sweep"></div>';
+  const svg = box.querySelector('svg');
+  const E = 'cubic-bezier(.22,.7,.18,1)';
+  const anims = [];
+  const A = (el, kf, o) => { const a = el.animate(kf, Object.assign({fill:'both', easing:E}, o)); anims.push(a); return a; };
+  // Scene 1: the U facets fold in
+  svg.querySelectorAll('.lg-u .f').forEach((p, i) => A(p, [{opacity:0, transform:'translateY(26px) scale(.86)'}, {opacity:1, transform:'none'}], {duration:620, delay:120 + i * 70}));
+  A(svg.querySelector('.crease'), [{opacity:0}, {opacity:.55}], {duration:400, delay:640});
+  // the triangle accent drops and settles from its corner
+  const tri = svg.querySelector('.lg-tri'); tri.style.transformOrigin = '100% 100%';
+  A(tri, [{opacity:0, transform:'translate(-6px,-26px) rotate(-22deg)'}, {opacity:1, transform:'none'}], {duration:620, delay:700, easing:'cubic-bezier(.3,1.25,.4,1)'});
+  // Scene 2: NICORN slides in from the right
+  svg.querySelectorAll('.lg-l').forEach((p, i) => A(p, [{opacity:0, transform:'translateX(140px)'}, {opacity:1, transform:'none'}], {duration:760, delay:980 + i * 65}));
+  // Scene 3: LANDSCAPING rises with a tracking expansion from the centre
+  const ls = [...svg.querySelectorAll('.lg-s')];
+  ls.forEach((p, i) => { const off = (i - (ls.length - 1) / 2) * -7; A(p, [{opacity:0, transform:`translate(${off}px,14px)`}, {opacity:1, transform:'none'}], {duration:720, delay:1500 + Math.abs(i - (ls.length-1)/2) * 30}); });
+  // Scene 4: a faint light sweep across the finished mark
+  A(box.querySelector('.sweep'), [{backgroundPosition:'160% 0'}, {backgroundPosition:'-60% 0'}], {duration:1000, delay:2050, easing:'ease-in-out'});
+  // Scene 5: logo flies to the header while the sage panel lifts away
+  let ended = false;
+  const end = (skip) => {
+    if (ended) return; ended = true;
+    clearTimeout(t1);
+    const target = $('#brandLink').getBoundingClientRect();
+    const from = svg.getBoundingClientRect();
+    if (skip || target.width === 0){ anims.forEach(a => a.finish()); intro.animate([{opacity:1},{opacity:0}], {duration:300, fill:'both'}).onfinish = () => { intro.remove(); finishIntro(); }; return; }
+    const fly = svg.cloneNode(true); fly.classList.add('flylogo'); fly.style.cssText = `left:${from.left}px;top:${from.top}px;width:${from.width}px;height:${from.height}px`;
+    document.body.appendChild(fly); svg.style.visibility = 'hidden';
+    const s = target.width / from.width;
+    $('#brandLink').style.opacity = '0';
+    fly.animate([{transform:'none'}, {transform:`translate(${target.left - from.left}px, ${target.top - from.top}px) scale(${s})`}], {duration:900, easing:'cubic-bezier(.65,0,.25,1)', fill:'both'}).onfinish = () => { $('#brandLink').style.opacity = ''; fly.remove(); };
+    intro.animate([{transform:'translateY(0)', borderRadius:'0 0 0 0'}, {transform:'translateY(-100%)', borderRadius:'0 0 50% 50% / 0 0 22vh 22vh'}], {duration:1000, delay:120, easing:'cubic-bezier(.7,0,.2,1)', fill:'both'}).onfinish = () => intro.remove();
+    setTimeout(finishIntro, 520);
+  };
+  const t1 = setTimeout(() => end(false), 3000);
+  $('#skipIntro').addEventListener('click', () => end(true));
+  intro.addEventListener('click', (e) => { if (e.target.id !== 'skipIntro') end(true); });
+  addEventListener('keydown', function k(e){ if (e.key === 'Escape' || e.key === 'Enter' || e.key === ' '){ end(true); removeEventListener('keydown', k); } });
+}
+
+render(routeKey()); first = false;
+runIntro();
+})();
+</script>
+</body></html>
